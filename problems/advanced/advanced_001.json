@@ -1,0 +1,37 @@
+{
+  "id": "advanced_001",
+  "title": "天罡北斗阵·步法",
+  "description": "全真七子的天罡北斗阵以七步为一循环，生生不息。\n\n请编写一个**生成器函数** `fibonacci()`，它能够生成无穷的斐波那契数列：0, 1, 1, 2, 3, 5, 8, 13, 21, ...\n\n要求：\n1. 使用 `yield` 关键字实现生成器\n2. 函数不接受参数，调用后返回一个生成器对象\n3. 生成器应能无限产生斐波那契数列\n4. 斐波那契数列定义：F(0)=0, F(1)=1, F(n)=F(n-1)+F(n-2)\n\n你的代码会在测试中被这样调用：\n```python\ngen = fibonacci()\nresult = []\nfor i, val in enumerate(gen):\n    result.append(str(val))\n    if i >= n - 1:\n        break\nprint(', '.join(result))\n```\n\n**示例：**\n当 n=8 时，输出应为：\n```\n0, 1, 1, 2, 3, 5, 8, 13\n```\n当 n=1 时，输出应为：\n```\n0\n```\n当 n=5 时，输出应为：\n```\n0, 1, 1, 2, 3\n```",
+  "story": "终南山上，秋风萧瑟。全真教重阳宫中，七位道人各持一柄长剑，分立北斗七星之位。\n\n天枢、天璇、天玑、天权、玉衡、开阳、摇光——七星方位暗合天道，每一脚踏出，皆是前两步之和的巧劲。\n\n丘处机收剑而立，朗声道：「天罡北斗阵，以步法为根基。第一步踏天枢，第二步踏天璇，自第三步起，每一步都是前两步之合力。这便如天地生数——太极生两仪，两仪生四象，四象生八卦，无穷无尽。」\n\n王处一微笑道：「师弟所言不虚。武学之道，贵在生生不息。你能用生成器写出这无穷步法么？」\n\n郝大通抚须道：「\n北斗七星高，哥舒夜带刀。\n至今窥牧马，不敢过临洮。\n\n这步法如星河般绵延不绝，用 yield 便可流泻而出。」",
+  "npc": "丘处机",
+  "template": "def fibonacci():\n    \"\"\"生成斐波那契数列的生成器函数\n    \n    使用 yield 产生无穷序列：0, 1, 1, 2, 3, 5, 8, 13, ...\n    \"\"\"\n    # TODO: 实现斐波那契生成器\n    pass\n\n\n# 测试代码（请勿修改）\nif __name__ == \"__main__\":\n    gen = fibonacci()\n    # 取前10项测试\n    result = []\n    for i, val in enumerate(gen):\n        result.append(str(val))\n        if i >= 9:\n            break\n    print(', '.join(result))\n",
+  "tests": [
+    {
+      "input": "n=1",
+      "expected_output": "0",
+      "display": "取前1项：仅第0项"
+    },
+    {
+      "input": "n=5",
+      "expected_output": "0, 1, 1, 2, 3",
+      "display": "取前5项"
+    },
+    {
+      "input": "n=8",
+      "expected_output": "0, 1, 1, 2, 3, 5, 8, 13",
+      "display": "取前8项"
+    },
+    {
+      "input": "n=12",
+      "expected_output": "0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89",
+      "display": "取前12项"
+    }
+  ],
+  "hint": "生成器函数使用 yield 而非 return。你可以用两个变量记录前两个斐波那契数，在 while True 循环中不断 yield 并更新它们。别忘了处理 F(0)=0 的初始情况。",
+  "knowledge": "迭代器与生成器",
+  "difficulty": 3,
+  "rewards": {
+    "exp": 200,
+    "silver": 80
+  }
+}

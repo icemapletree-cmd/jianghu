@@ -1,0 +1,13 @@
+{
+  "id": "advanced_015",
+  "title": "武林志·终极系统",
+  "description": "设计一个完整的武侠RPG数据层，包含：\n\n```python\nclass Fighter:\n    def __init__(self, name, faction, hp, attack):\n        pass\n    def is_alive(self): pass\n    def take_damage(self, dmg): pass\n\nclass Battle:\n    def __init__(self, f1, f2):\n        pass\n    def fight(self) -> str:\n        # 模拟战斗：两人轮流攻击直到一方倒下\n        # 返回胜者名字\n        pass\n\nclass Tournament:\n    def __init__(self):\n        self.fighters = []\n    def add(self, fighter): pass\n    def run(self) -> str:\n        # 两两配对淘汰赛，返回最终冠军名字\n        pass\n```\n\n测试：\n```python\nt = Tournament()\nt.add(Fighter('乔峰', '丐帮', 100, 20))\nt.add(Fighter('虚竹', '少林', 90, 18))\nt.add(Fighter('段誉', '大理', 80, 15))\nt.add(Fighter('慕容复', '慕容', 85, 16))\nprint(t.run())\n```\n\n输出：`乔峰`（HP最高的乔峰最终获胜）",
+  "story": "华山论剑终极对决！你设计了一个完整的战斗系统，模拟各路高手的淘汰赛。\n\n「天下第一，当之无愧！」",
+  "npc": "王重阳",
+  "template": "class Fighter:\n    def __init__(self, name, faction, hp, attack):\n        # TODO\n        pass\n    def is_alive(self):\n        # TODO\n        pass\n    def take_damage(self, dmg):\n        # TODO\n        pass\n\nclass Battle:\n    def __init__(self, f1, f2):\n        # TODO\n        pass\n    def fight(self):\n        # TODO: 轮流攻击，返回胜者名字\n        pass\n\nclass Tournament:\n    def __init__(self):\n        self.fighters = []\n    def add(self, fighter):\n        # TODO\n        pass\n    def run(self):\n        # TODO: 淘汰赛\n        pass\n\nt = Tournament()\nt.add(Fighter('乔峰', '丐帮', 100, 20))\nt.add(Fighter('虚竹', '少林', 90, 18))\nt.add(Fighter('段誉', '大理', 80, 15))\nt.add(Fighter('慕容复', '慕容', 85, 16))\nprint(t.run())\n",
+  "tests": [{"input": "", "expected_output": "乔峰", "display": "淘汰赛冠军"}],
+  "hint": "Battle.fight用while循环轮流攻击。Tournament.run用while len>1，每次pop前两个打，胜者append回去",
+  "knowledge": "综合系统设计",
+  "difficulty": 3,
+  "rewards": {"exp": 300, "silver": 120}
+}

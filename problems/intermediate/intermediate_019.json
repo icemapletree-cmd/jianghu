@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_019",
+  "title": "四十二章经·碎片",
+  "description": "韦小宝和康熙各收集了一些四十二章经的碎片编号：\n```python\nxiaobao = {1, 3, 5, 7, 9, 12, 15}\nkangxi = {2, 3, 5, 8, 11, 12, 14}\n```\n\n请计算：\n1. 两人共同拥有的碎片编号（交集）\n2. 合起来总共有多少个不同碎片（并集长度）\n\n输出两行：\n```\n共同: {3, 5, 12}\n总计: 11\n```",
+  "story": "韦小宝和康熙各掏出一堆碎片：「我们比比看，有哪些是重复的？」\n\n你用集合运算一算便知。",
+  "npc": "韦小宝",
+  "template": "xiaobao = {1, 3, 5, 7, 9, 12, 15}\nkangxi = {2, 3, 5, 8, 11, 12, 14}\n\n# TODO: 计算交集和并集\n",
+  "tests": [{"input": "", "expected_output": "共同: {3, 5, 12}\n总计: 11", "display": "集合交集和并集"}],
+  "hint": "xiaobao & kangxi 得交集，xiaobao | kangxi 得并集，len()算长度",
+  "knowledge": "集合操作",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

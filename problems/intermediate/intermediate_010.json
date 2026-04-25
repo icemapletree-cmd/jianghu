@@ -1,0 +1,18 @@
+{
+  "id": "intermediate_010",
+  "title": "打狗棒法·传承",
+  "description": "丐帮打狗棒法代代相传，新任帮主需要继承前任帮主的棒法，并在此基础上发展出自己的招式。你需要用类的继承来体现这种师承关系。\n\n**要求：**\n- 已有父类 `Elder`（长老）：\n```python\nclass Elder:\n    def __init__(self, name):\n        self.name = name\n        self.title = \"丐帮长老\"\n    \n    def staff_basic(self):\n        return f\"{self.name}使出棒法基础式\"\n```\n- 定义子类 `Chief`（帮主），继承自 `Elder`\n- 子类的 `__init__` 接收 `name` 和 `generation`（第几代帮主），调用父类的 `__init__` 初始化 `name`，再将 `generation` 赋值给 `self.generation`，并将 `self.title` 设为 `\"丐帮帮主\"`\n- 定义方法 `staff_basic(self)`，返回 `\"第{self.generation}代{self.name}\" + 父类的 staff_basic 返回值`\n- 定义方法 `ultimate(self)`，返回 `\"{self.name}使出天下无狗！\"`\n\n**示例：**\n```python\nc = Chief(\"洪七公\", 18)\nprint(c.title)        # 输出：丐帮帮主\nprint(c.staff_basic()) # 输出：第18代洪七公洪七公使出棒法基础式\nprint(c.ultimate())    # 输出：洪七公使出天下无狗！\n```",
+  "story": "丐帮总舵，灯火通明。前任帮主将一根碧绿打狗棒郑重交到新任帮主手中。\n\n「打狗棒法是我丐帮镇帮之宝，代代相传。你今日继任帮主之位，便是承了前人的衣钵。」\n\n老帮主演示了一套基础棒法，然后说道：「继承者，不仅承其招式，更要发扬光大。你用 super() 调用我的基础招式，再在此基础上加你自己的杀招——天下无狗！这便是继承的真义：站在前人的肩膀上。」",
+  "npc": "丐帮前任帮主",
+  "template": "# 父类 Elder 已定义\nclass Elder:\n    def __init__(self, name):\n        self.name = name\n        self.title = \"丐帮长老\"\n    \n    def staff_basic(self):\n        return f\"{self.name}使出棒法基础式\"\n\n# 定义子类 Chief，继承 Elder\nclass Chief(Elder):\n    def __init__(self, name, generation):\n        # 调用父类 __init__\n        # 设置 generation 和 title\n        pass\n    \n    def staff_basic(self):\n        # 调用父类方法并组合\n        pass\n    \n    def ultimate(self):\n        # 返回终招\n        pass\n",
+  "tests": [
+    {"input": "c = Chief(\"洪七公\", 18); c.title", "expected_output": "丐帮帮主", "display": "帮主称谓正确"},
+    {"input": "Chief(\"洪七公\", 18).staff_basic()", "expected_output": "第18代洪七公洪七公使出棒法基础式", "display": "重写并调用父类方法"},
+    {"input": "Chief(\"洪七公\", 18).ultimate()", "expected_output": "洪七公使出天下无狗！", "display": "施展终极棒法"},
+    {"input": "Chief(\"黄蓉\", 19).title", "expected_output": "丐帮帮主", "display": "女帮主称谓正确"}
+  ],
+  "hint": "子类用 class Chief(Elder) 继承。__init__ 中用 super().__init__(name) 调用父类初始化。重写方法时也可以用 super().方法名() 调用父类版本。",
+  "knowledge": "继承",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

@@ -1,0 +1,13 @@
+{
+  "id": "advanced_011",
+  "title": "武林排行榜·系统",
+  "description": "请实现一个完整的武林排行榜系统：\n\n```python\nclass RankingSystem:\n    def __init__(self):\n        self.fighters = []  # [{name, faction, power, wins}]\n    \n    def add_fighter(self, name, faction, power):\n        # 添加高手\n        pass\n    \n    def record_win(self, name):\n        # 记录胜利，wins+1\n        pass\n    \n    def get_ranking(self):\n        # 返回按 power*wins 排序的名字列表（降序）\n        pass\n    \n    def get_faction_ranking(self):\n        # 返回按门派总分排序的门派列表（降序）\n        pass\n```\n\n测试：\n```python\nrs = RankingSystem()\nrs.add_fighter('乔峰', '丐帮', 95)\nrs.add_fighter('虚竹', '少林', 90)\nrs.add_fighter('段誉', '大理', 85)\nrs.record_win('乔峰')\nrs.record_win('乔峰')\nrs.record_win('虚竹')\nprint(rs.get_ranking())\nprint(rs.get_faction_ranking())\n```\n\n输出：\n```\n['乔峰', '虚竹', '段誉']\n['丐帮', '少林', '大理']\n```",
+  "story": "华山论剑在即，你需要建立武林排行榜系统——综合实力和战绩来排名。\n\n洪七公看了一眼：「不错不错，用class把数据和逻辑封装好。」",
+  "npc": "洪七公",
+  "template": "class RankingSystem:\n    def __init__(self):\n        self.fighters = []\n    \n    def add_fighter(self, name, faction, power):\n        # TODO\n        pass\n    \n    def record_win(self, name):\n        # TODO\n        pass\n    \n    def get_ranking(self):\n        # TODO: 按 power*wins 降序\n        pass\n    \n    def get_faction_ranking(self):\n        # TODO: 按门派总分降序\n        pass\n\nrs = RankingSystem()\nrs.add_fighter('乔峰', '丐帮', 95)\nrs.add_fighter('虚竹', '少林', 90)\nrs.add_fighter('段誉', '大理', 85)\nrs.record_win('乔峰')\nrs.record_win('乔峰')\nrs.record_win('虚竹')\nprint(rs.get_ranking())\nprint(rs.get_faction_ranking())\n",
+  "tests": [{"input": "", "expected_output": "['乔峰', '虚竹', '段誉']\n['丐帮', '少林', '大理']", "display": "排行榜系统测试"}],
+  "hint": "get_ranking用sorted按f['power']*f['wins']降序。get_faction_ranking先聚合门派总分再排序",
+  "knowledge": "综合系统设计",
+  "difficulty": 3,
+  "rewards": {"exp": 250, "silver": 100}
+}

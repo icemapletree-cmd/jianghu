@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_023",
+  "title": "葵花速战·分批",
+  "description": "东方不败攻击速度极快，你需要将招式分批处理。\n\n给定列表 `attacks = list(range(1, 11))`（即[1,2,...,10]），请将其每3个分为一批，最后不足3个也作为一批。\n\n输出：`[[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]`",
+  "story": "东方不败身法如电：「天下武功，唯快不破！」\n\n你的眼睛跟不上她的速度，只能将招式分批处理——每三招一组，逐一化解。",
+  "npc": "东方不败",
+  "template": "attacks = list(range(1, 11))\n\n# TODO: 每3个分一批\nbatches = []\n# ...\n\nprint(batches)\n",
+  "tests": [{"input": "", "expected_output": "[[1, 2, 3], [4, 5, 6], [7, 8, 9], [10]]", "display": "分批结果"}],
+  "hint": "[attacks[i:i+3] for i in range(0, len(attacks), 3)]",
+  "knowledge": "列表切片",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

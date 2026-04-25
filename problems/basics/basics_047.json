@@ -1,0 +1,13 @@
+{
+  "id": "basics_047",
+  "title": "诈婚·真伪",
+  "description": "赵敏用假婚约骗张无忌。请判断婚约的真假：\n\n```python\ndocuments = [\n    ('婚约A', True),\n    ('婚约B', False),\n    ('婚约C', True),\n]\n```\n\n请筛选出为True（真实）的文件名，输出列表。\n\n输出：`['婚约A', '婚约C']`",
+  "story": "赵敏笑盈盈地拿出几份文件：「无忌哥哥，看看哪份是真的？」\n\n张无忌一头雾水。赵敏总是棋高一着，让人防不胜防。",
+  "npc": "赵敏",
+  "template": "documents = [\n    ('婚约A', True),\n    ('婚约B', False),\n    ('婚约C', True),\n]\n\n# TODO: 筛选为True的文件名\n",
+  "tests": [{"input": "", "expected_output": "['婚约A', '婚约C']", "display": "真假婚约"}],
+  "hint": "[name for name, is_real in documents if is_real]",
+  "knowledge": "列表推导式+布尔",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

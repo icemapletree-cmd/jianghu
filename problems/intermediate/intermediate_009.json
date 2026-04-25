@@ -1,0 +1,18 @@
+{
+  "id": "intermediate_009",
+  "title": "六脉神剑·指法",
+  "description": "大理段氏的六脉神剑有六路剑法，分别对应六根手指。你需要为六脉神剑创建一个类，在 `__init__` 中初始化各种属性。\n\n**要求：**\n- 定义类 `SixMeridianSword`\n- `__init__` 方法接收参数 `user`（使用者姓名）和 `level`（功力等级，整数）\n- 初始化以下属性：\n  - `self.user`：使用者姓名\n  - `self.level`：功力等级\n  - `self.swords`：一个列表，包含六路剑法名称 `[\"少商剑\", \"商阳剑\", \"中冲剑\", \"关冲剑\", \"少冲剑\", \"少泽剑\"]`\n  - `self.current_index`：当前使用的是第几路剑，初始为 `0`\n- 定义方法 `next_sword(self)`，将 `current_index` 加 1（如果已经是 5 则回到 0），返回当前剑法名称\n- 定义方法 `status(self)`，返回字符串 `\"{self.user}功力{self.level}级，当前：{剑法名}\"`\n\n**示例：**\n```python\ns = SixMeridianSword(\"段誉\", 8)\nprint(s.status())      # 输出：段誉功力8级，当前：少商剑\nprint(s.next_sword())  # 输出：商阳剑\nprint(s.next_sword())  # 输出：中冲剑\nprint(s.status())      # 输出：段誉功力8级，当前：中冲剑\n```",
+  "story": "大理天龙寺内，枯荣大师正在传授六脉神剑。他伸出右手，六指依次发出无形剑气，将面前的石柱切出六道剑痕。\n\n「六脉神剑，以六根手指发出六路剑气。每根手指对应不同的经脉和剑法。」\n\n他转头看向你：「你要创建一个类来管理这六路剑法。初始化时设定使用者和功力等级，内置六路剑法的列表。每次出剑便切换到下一路。此功的关键在于 __init__ 方法——一切属性，皆在初始化时奠定。」",
+  "npc": "枯荣大师",
+  "template": "# 定义 SixMeridianSword 类\n\nclass SixMeridianSword:\n    def __init__(self, user, level):\n        # 初始化 user, level, swords 列表, current_index\n        pass\n    \n    def next_sword(self):\n        # current_index 加 1（到5后回到0）\n        # 返回当前剑法名称\n        pass\n    \n    def status(self):\n        # 返回状态字符串\n        pass\n",
+  "tests": [
+    {"input": "s = SixMeridianSword(\"段誉\", 8); s.status()", "expected_output": "段誉功力8级，当前：少商剑", "display": "初始状态显示"},
+    {"input": "s = SixMeridianSword(\"段誉\", 8); s.next_sword()", "expected_output": "商阳剑", "display": "切换到第二路剑"},
+    {"input": "s = SixMeridianSword(\"段誉\", 8); s.next_sword(); s.next_sword(); s.status()", "expected_output": "段誉功力8级，当前：中冲剑", "display": "连续切换后查看状态"},
+    {"input": "s = SixMeridianSword(\"段誉\", 10); [s.next_sword() for _ in range(6)][-1]", "expected_output": "少商剑", "display": "切换六次回到第一路"}
+  ],
+  "hint": "__init__ 中初始化 self.swords 为六路剑法的列表，self.current_index = 0。next_sword 中用 (self.current_index + 1) % 6 实现循环切换。别忘了先切换再返回，或者先返回再切换——注意和示例保持一致。",
+  "knowledge": "__init__与self",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

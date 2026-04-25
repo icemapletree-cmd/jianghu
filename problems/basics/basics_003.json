@@ -1,0 +1,22 @@
+{
+  "id": "basics_003",
+  "title": "内功心法·数据类型",
+  "description": "黄蓉看到你在读小册子，凑过来说：\n\n「呆子，你知道江湖上的东西分几种吗？\n  有数字（整数、小数），有文字（字符串），\n  还有真和假（布尔值）。\n\n  来，帮我分辨一下这些是什么类型：\n  42 是什么类型？用 type() 查看，然后输出。」",
+  "story": "黄蓉路过，指点你数据类型的奥秘。",
+  "npc": "黄蓉",
+  "template": "# 查看 42 的类型并输出\n# 提示：type() 返回类型，转成字符串输出\n",
+  "tests": [
+    {
+      "input": "",
+      "expected_output": "<class 'int'>",
+      "display": "输出42的类型"
+    }
+  ],
+  "hint": "print(type(42))",
+  "knowledge": "数据类型",
+  "difficulty": 1,
+  "rewards": {
+    "exp": 50,
+    "silver": 30
+  }
+}

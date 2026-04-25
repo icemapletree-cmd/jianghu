@@ -1,0 +1,13 @@
+{
+  "id": "basics_043",
+  "title": "冰火岛·配置",
+  "description": "张无忌在冰火岛长大，需要配置自己的修炼环境。\n\n请创建一个字典 `env`，包含以下键值对：\n- 'name': '张无忌'\n- 'location': '冰火岛'\n- 'level': 1\n\n然后输出这个字典。\n\n输出：`{'name': '张无忌', 'location': '冰火岛', 'level': 1}`",
+  "story": "冰火岛上，张翠山和殷素素看着年幼的张无忌。\n\n「无忌，你需要配置好自己的修炼环境。」\n\n小无忌似懂非懂地点了点头。",
+  "npc": "张无忌",
+  "template": "# 创建修炼环境配置字典\nenv = {\n    # TODO: 填入三个键值对\n}\nprint(env)\n",
+  "tests": [{"input": "", "expected_output": "{'name': '张无忌', 'location': '冰火岛', 'level': 1}", "display": "环境配置"}],
+  "hint": "直接创建字典 env = {'name': '张无忌', 'location': '冰火岛', 'level': 1}",
+  "knowledge": "字典创建",
+  "difficulty": 1,
+  "rewards": {"exp": 50, "silver": 20}
+}

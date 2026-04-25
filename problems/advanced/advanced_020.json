@@ -1,0 +1,13 @@
+{
+  "id": "advanced_020",
+  "title": "幕后黑手·调试",
+  "description": "成昆在幕后操纵一切。以下代码有bug，请找出并修复：\n\n```python\ndef find_mastermind(suspects: list) -> str:\n    for s in suspects:\n        if s == '成昆':\n            return f'幕后黑手是：{s}'\n    return '未找到'\n\n# Bug: 没有返回值被使用\nsuspects = ['谢逊', '成昆', '韦一笑']\nresult = find_mastermind(suspects)\nprint(result)\n```\n\n输出：`幕后黑手是：成昆`",
+  "story": "成昆——混元霹雳手，一切阴谋的幕后黑手。\n\n他隐藏在暗处，操纵着整个江湖的纷争。现在，你需要像调试bug一样找出他！",
+  "npc": "谢逊",
+  "template": "def find_mastermind(suspects: list) -> str:\n    for s in suspects:\n        if s == '成昆':\n            # TODO: 返回结果\n            pass\n    return '未找到'\n\nsuspects = ['谢逊', '成昆', '韦一笑']\nresult = find_mastermind(suspects)\nprint(result)\n",
+  "tests": [{"input": "", "expected_output": "幕后黑手是：成昆", "display": "找出幕后黑手"}],
+  "hint": "在if分支中 return f'幕后黑手是：{s}'",
+  "knowledge": "调试与修复",
+  "difficulty": 3,
+  "rewards": {"exp": 150, "silver": 60}
+}

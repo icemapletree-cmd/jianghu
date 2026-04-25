@@ -1,0 +1,22 @@
+{
+  "id": "basics_007",
+  "title": "降龙十八掌·for循环",
+  "description": "洪七公啃着鸡腿说：\n\n「降龙十八掌，要一掌接一掌地打！\n  用 for 循环，输出 1 到 5，每行一个数字。」\n\n输出格式（每行一个数字）：\n1\n2\n3\n4\n5",
+  "story": "洪七公教你降龙十八掌的入门——循环的力量。",
+  "npc": "洪七公",
+  "template": "# 用 for 循环输出 1 到 5，每行一个\n",
+  "tests": [
+    {
+      "input": "",
+      "expected_output": "1\n2\n3\n4\n5",
+      "display": "输出1到5"
+    }
+  ],
+  "hint": "for i in range(1, 6): print(i)",
+  "knowledge": "for",
+  "difficulty": 1,
+  "rewards": {
+    "exp": 60,
+    "silver": 25
+  }
+}

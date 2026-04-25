@@ -1,0 +1,18 @@
+{
+  "id": "intermediate_001",
+  "title": "逍遥游·步法总诀",
+  "description": "灵鹫宫主正在传授逍遥派的入门步法。她要求你定义一个函数 `greet(name)`，接收一个侠客的名字，返回欢迎辞。\n\n**要求：**\n- 定义函数 `greet(name)`\n- 函数接收一个字符串参数 `name`\n- 返回格式为 `\"{name}大侠，久仰！\"`\n\n**示例：**\n```python\nprint(greet(\"令狐冲\"))\n# 输出：令狐冲大侠，久仰！\n\nprint(greet(\"乔峰\"))\n# 输出：乔峰大侠，久仰！\n```",
+  "story": "灵鹫宫主端坐于天山缥缈峰之上，身旁云雾缭绕，仙鹤成群。她轻轻抬手，一道内力将你托至面前。\n\n「你既已上山，便是与逍遥派有缘。我逍遥派武功讲究一个『逍遥』二字，随心所欲，无拘无束。函数者，便如武功招式——定义一次，反复施展，威力无穷。」\n\n她微微一笑：「来，先学最基础的一招。我教你定义一个函数，能对来访侠客报上名号。日后行走江湖，这是最基本的礼数。」",
+  "npc": "灵鹫宫主·天山童姥",
+  "template": "# 定义函数 greet(name)\n# 接收一个侠客名字，返回 \"{name}大侠，久仰！\"\n\ndef greet(name):\n    # 在此编写你的代码\n    pass\n",
+  "tests": [
+    {"input": "greet(\"令狐冲\")", "expected_output": "令狐冲大侠，久仰！", "display": "greet(\"令狐冲\") 返回正确欢迎辞"},
+    {"input": "greet(\"乔峰\")", "expected_output": "乔峰大侠，久仰！", "display": "greet(\"乔峰\") 返回正确欢迎辞"},
+    {"input": "greet(\"郭靖\")", "expected_output": "郭靖大侠，久仰！", "display": "greet(\"郭靖\") 返回正确欢迎辞"},
+    {"input": "greet(\"黄蓉\")", "expected_output": "黄蓉大侠，久仰！", "display": "greet(\"黄蓉\") 返回正确欢迎辞"}
+  ],
+  "hint": "函数用 def 关键字定义，返回值用 return。字符串格式化可以用 f-string，即 f\"{name}大侠，久仰！\"",
+  "knowledge": "函数定义",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

@@ -1,0 +1,18 @@
+{
+  "id": "intermediate_003",
+  "title": "九阴真经·经脉图",
+  "description": "黄药师交给你一本记载各门派武功秘籍的索引册，需要你用字典来整理这些信息。\n\n**要求：**\n- 定义函数 `manage_secrets(secrets_dict, action, key, value=None)`\n- `secrets_dict` 是一个字典，存储门派名→武功秘籍名的映射\n- `action` 是操作类型，支持以下三种：\n  - `\"add\"`：添加一条记录 `key: value`，返回更新后的字典\n  - `\"remove\"`：删除键为 `key` 的记录，返回更新后的字典\n  - `\"query\"`：查询键为 `key` 的值并返回该值（字符串形式）\n- 如果 query 的 key 不存在，返回 `\"无此秘籍\"`\n\n**示例：**\n```python\nd = {\"少林\": \"易筋经\", \"武当\": \"太极剑\"}\nprint(manage_secrets(d, \"add\", \"峨眉\", \"倚天剑法\"))\n# 输出：{'少林': '易筋经', '武当': '太极剑', '峨眉': '倚天剑法'}\n\nprint(manage_secrets(d, \"query\", \"少林\"))\n# 输出：易筋经\n\nprint(manage_secrets(d, \"remove\", \"武当\"))\n# 输出：{'少林': '易筋经'}\n```",
+  "story": "桃花岛上，黄药师正对着一张巨大的经脉图冥思苦想。见你到来，他微微皱眉。\n\n「我这岛上收集了天下各门派的武功秘籍目录，可惜一直没能好好整理。听闻你在学习一种叫做『字典』的功夫——键值对应，恰如经脉与穴位的对应关系。」\n\n他展开一幅卷轴：「来，帮我整理这份索引。能添加新门派的秘籍、能查询某个门派的武功、也能删除已经失传的记录。练好此功，天下武学尽在掌握。」",
+  "npc": "黄药师",
+  "template": "# 定义函数 manage_secrets(secrets_dict, action, key, value=None)\n# 根据 action 执行添加、删除或查询操作\n\ndef manage_secrets(secrets_dict, action, key, value=None):\n    # action == \"add\": 添加 key: value\n    # action == \"remove\": 删除 key\n    # action == \"query\": 查询 key 对应的值\n    pass\n",
+  "tests": [
+    {"input": "manage_secrets({\"少林\": \"易筋经\", \"武当\": \"太极剑\"}, \"add\", \"峨眉\", \"倚天剑法\")", "expected_output": "{'少林': '易筋经', '武当': '太极剑', '峨眉': '倚天剑法'}", "display": "添加新门派秘籍"},
+    {"input": "manage_secrets({\"少林\": \"易筋经\", \"武当\": \"太极剑\"}, \"query\", \"少林\")", "expected_output": "易筋经", "display": "查询少林的秘籍"},
+    {"input": "manage_secrets({\"少林\": \"易筋经\", \"武当\": \"太极剑\"}, \"remove\", \"武当\")", "expected_output": "{'少林': '易筋经'}", "display": "删除武当记录"},
+    {"input": "manage_secrets({\"少林\": \"易筋经\"}, \"query\", \"丐帮\")", "expected_output": "无此秘籍", "display": "查询不存在的门派返回提示"}
+  ],
+  "hint": "字典添加用 dict[key] = value，删除用 del dict[key] 或 dict.pop(key)，查询用 dict.get(key, default)。别忘了根据 action 分支处理。",
+  "knowledge": "字典进阶",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

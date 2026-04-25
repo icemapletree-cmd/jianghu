@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_026",
+  "title": "玄铁重剑·类进阶",
+  "description": "玄铁重剑：重剑无锋，大巧不工。请实现一个 Sword 类：\n\n```python\nclass Sword:\n    def __init__(self, name, weight):\n        self.name = name\n        self.weight = weight\n    \n    def __str__(self):\n        return f'{self.name}({self.weight}斤)'\n    \n    def __repr__(self):\n        return f'Sword({self.name!r}, {self.weight})'\n```\n\n创建 `Sword('玄铁重剑', 88)` 并 print 它。\n\n输出：`玄铁重剑(88斤)`",
+  "story": "杨过单手举起玄铁重剑——八十八斤！\n\n「重剑无锋，大巧不工。这就是编程之道的精髓——不需要花哨的语法，扎实的设计才是王道。」",
+  "npc": "杨过",
+  "template": "class Sword:\n    def __init__(self, name, weight):\n        self.name = name\n        self.weight = weight\n    \n    def __str__(self):\n        # TODO\n        pass\n\ns = Sword('玄铁重剑', 88)\nprint(s)\n",
+  "tests": [{"input": "", "expected_output": "玄铁重剑(88斤)", "display": "__str__测试"}],
+  "hint": "return f'{self.name}({self.weight}斤)'",
+  "knowledge": "__str__魔术方法",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

@@ -1,0 +1,13 @@
+{
+  "id": "projects_004",
+  "title": "综合项目004（待完善）",
+  "description": "综合项目题，待后续完善。",
+  "story": "",
+  "npc": "",
+  "template": "# 综合项目\n",
+  "tests": [{"input": "", "expected_output": "TODO", "display": "待完善"}],
+  "hint": "待完善",
+  "knowledge": "综合项目",
+  "difficulty": 3,
+  "rewards": {"exp": 300, "silver": 100}
+}

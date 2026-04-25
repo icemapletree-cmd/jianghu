@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_022",
+  "title": "鳌拜密信·解密",
+  "description": "鳌拜的密信用了简单的凯撒加密——每个字符向后移动3位。\n\n请写解密函数 `decrypt(text)`，将每个字符向前移动3位。\n只处理英文字母，其他字符不变。\n\n测试：`decrypt('khoor')` 应返回 `'hello'`",
+  "story": "康熙递过一封密信：「这是鳌拜的加密信件。朕知道他用的是凯撒密码，位移3位。帮我解密！」",
+  "npc": "康熙",
+  "template": "def decrypt(text):\n    \"\"\"凯撒解密：每个字母向前移3位\"\"\"\n    result = []\n    for ch in text:\n        if ch.isalpha():\n            # TODO: 解密逻辑\n            pass\n        else:\n            result.append(ch)\n    return ''.join(result)\n\nprint(decrypt('khoor'))\n",
+  "tests": [{"input": "", "expected_output": "hello", "display": "解密khoor->hello"}],
+  "hint": "用 chr((ord(ch) - ord('a') - 3) % 26 + ord('a')) 处理小写字母",
+  "knowledge": "字符串加密",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

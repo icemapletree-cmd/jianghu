@@ -1,0 +1,17 @@
+{
+  "id": "basics_035",
+  "title": "醉剑·随机招",
+  "description": "令狐冲喝醉了，随机出招。他有3招：'破剑式'、'破刀式'、'破枪式'。\n\n请导入random模块，使用 random.choice() 从列表中随机选择一招，输出招式名。\n\n由于是随机的，测试只检查输出是否为三个招式之一。",
+  "story": "令狐冲已经喝到第十碗了，摇摇晃晃地站起来：「看我的——嗝——独孤九剑！」\n\n他随手挥出一剑，连自己都不知道出的是哪一招。",
+  "npc": "令狐冲",
+  "template": "import random\n\nmoves = ['破剑式', '破刀式', '破枪式']\n\n# TODO: 随机选择一招并输出\n",
+  "tests": [
+    {"input": "", "expected_output": "破剑式", "display": "随机招式（三个之一）"},
+    {"input": "", "expected_output": "破刀式", "display": "随机招式（三个之一）"},
+    {"input": "", "expected_output": "破枪式", "display": "随机招式（三个之一）"}
+  ],
+  "hint": "print(random.choice(moves))",
+  "knowledge": "random模块",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

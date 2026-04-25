@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_033",
+  "title": "太极·借力打力",
+  "description": "太极的借力打力就像装饰器——在原函数基础上添加功能。\n\n请写装饰器 `@tai_chi`，在函数执行前后加上「太极起手」和「收势」：\n\n```python\n@tai_chi\ndef attack():\n    return '推手'\n```\n\nprint(attack()) 输出：`太极起手→推手→收势`",
+  "story": "张三丰：「太极之道，借力打力。装饰器就是在原来的招式上加上新的变化。」",
+  "npc": "张三丰",
+  "template": "def tai_chi(func):\n    def wrapper():\n        # TODO: 前后加装饰\n        pass\n    return wrapper\n\n@tai_chi\ndef attack():\n    return '推手'\n\nprint(attack())\n",
+  "tests": [{"input": "", "expected_output": "太极起手→推手→收势", "display": "太极装饰器"}],
+  "hint": "return f'太极起手→{func()}→收势'",
+  "knowledge": "装饰器进阶",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

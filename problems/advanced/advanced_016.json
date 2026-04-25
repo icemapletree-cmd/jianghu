@@ -1,0 +1,13 @@
+{
+  "id": "advanced_016",
+  "title": "密信破解·批量",
+  "description": "鳌拜的多封密信中混有大量信息。请用正则提取所有「数字+两」的模式。\n\n```python\nimport re\ntext = \"买三匹马用了300两，修城墙花了1200两，士兵月饷50两。\"\n```\n\n请提取所有金额（数字部分），返回列表：`[300, 1200, 50]`",
+  "story": "康熙拿着一摞奏折：「这里面有大量军费开支记录，帮朕把所有金额提取出来。」",
+  "npc": "康熙",
+  "template": "import re\n\ntext = \"买三匹马用了300两，修城墙花了1200两，士兵月饷50两。\"\n\n# TODO: 提取所有金额\nresult = \nprint(result)\n",
+  "tests": [{"input": "", "expected_output": "[300, 1200, 50]", "display": "提取所有金额"}],
+  "hint": "re.findall(r'(\\d+)两', text) 提取，然后 [int(x) for x in ...] 转为整数",
+  "knowledge": "正则表达式进阶",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

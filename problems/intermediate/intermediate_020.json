@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_020",
+  "title": "折梅手·传承",
+  "description": "天山折梅手融合了逍遥派多门武功。请用多重继承实现：\n\n```python\nclass PalmArt:\n    def attack(self): return '掌'\n\nclass SwordArt:\n    def attack(self): return '剑'\n\nclass ZheMeiShou(PalmArt, SwordArt):\n    def combo(self):\n        # 返回 '掌剑合一'\n        pass\n```\n\n创建 ZheMeiShou 实例，调用 combo() 方法，输出 `掌剑合一`。",
+  "story": "天山童姥冷冷地说：「折梅手是掌法和剑法的融合——多重继承，懂吗？」\n\n你试着将两种武功合二为一。",
+  "npc": "天山童姥",
+  "template": "class PalmArt:\n    def attack(self): return '掌'\n\nclass SwordArt:\n    def attack(self): return '剑'\n\nclass ZheMeiShou(PalmArt, SwordArt):\n    def combo(self):\n        # TODO: 返回融合招式\n        pass\n\nzm = ZheMeiShou()\nprint(zm.combo())\n",
+  "tests": [{"input": "", "expected_output": "掌剑合一", "display": "多重继承融合"}],
+  "hint": "return f'{self.attack()}剑合一' — 注意 PalmArt 排在前面，self.attack() 返回 '掌'",
+  "knowledge": "多重继承",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

@@ -1,0 +1,22 @@
+{
+  "id": "basics_011",
+  "title": "剑法组合·字符串操作",
+  "description": "令狐冲教你独孤九剑的总诀：\n\n「剑法总诀是一段文字：\"破刀破剑破枪破鞭破索破掌破箭破气\"\n  请你：\n  1. 输出总诀长度\n  2. 统计\"破\"出现了几次」\n\n输出格式（两行）：\n16\n8",
+  "story": "令狐冲教你独孤九剑——字符串操作入门。",
+  "npc": "令狐冲",
+  "template": "sword_art = \"破刀破剑破枪破鞭破索破掌破箭破气\"\n# 输出总长度\n# 统计\"破\"出现的次数\n",
+  "tests": [
+    {
+      "input": "",
+      "expected_output": "16\n8",
+      "display": "输出长度和'破'出现次数"
+    }
+  ],
+  "hint": "print(len(sword_art))\\nprint(sword_art.count('破'))",
+  "knowledge": "字符串",
+  "difficulty": 1,
+  "rewards": {
+    "exp": 60,
+    "silver": 25
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_031",
+  "title": "太极·以柔克刚",
+  "description": "太极讲究以柔克刚——lazy evaluation，用到时才计算。\n\n请实现一个生成器函数 `tai_chi(moves: list)`，逐个yield招式名：\n\n```python\ndef tai_chi(moves):\n    for m in moves:\n        yield m\n```\n\n用list()消费生成器，输出：`['起势', '揽雀尾', '单鞭', '白鹤亮翅']`",
+  "story": "张三丰在武当山上传授太极拳：「以柔克刚，用到才出——这就是lazy evaluation。」\n\n张无忌看着祖师爷行云流水的动作，若有所悟。",
+  "npc": "张三丰",
+  "template": "def tai_chi(moves):\n    # TODO: yield每个招式\n    pass\n\nresult = list(tai_chi(['起势', '揽雀尾', '单鞭', '白鹤亮翅']))\nprint(result)\n",
+  "tests": [{"input": "", "expected_output": "['起势', '揽雀尾', '单鞭', '白鹤亮翅']", "display": "太极迭代器"}],
+  "hint": "for m in moves: yield m",
+  "knowledge": "生成器入门",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

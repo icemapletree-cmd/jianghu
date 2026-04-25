@@ -1,0 +1,17 @@
+{
+  "id": "advanced_004",
+  "title": "独孤九剑·破索式",
+  "description": "韦小宝从鳌拜的密室中偷出一封加密信件，信中混杂了大量文字，但真正有用的信息被藏在特定模式之中。\n\n请使用正则表达式，从给定的字符串中提取所有符合以下规则的「武功口诀」：\n- 口诀由大写字母开头，后跟2-4个汉字\n- 格式如：\"降龙掌\"、\"打狗棒法\"\n\n**要求：**\n定义函数 `extract_secrets(text: str) -> list`，接收一个字符串，返回所有匹配的口诀列表。\n\n**示例：**\n```python\ntext = \"降龙掌是至刚至阳的掌法，打狗棒法为丐帮镇帮之宝，而九阴白骨爪却为邪术。\"\nresult = extract_secrets(text)\nprint(result)  # ['降龙掌', '打狗棒法', '九阴白骨爪']\n```",
+  "story": "韦小宝一脸狡黠地把一封信塞到你手里：「嘿嘿，大侠，这可是我从鳌拜那老混蛋密室里摸出来的。里面藏着一堆武功口诀，但我看不懂，你帮我找找？」\n\n你展开信纸，上面密密麻麻全是文字，但似乎有些特殊的词汇混在其中。黄蓉凑过来看了一眼：「这是用了正则暗号——只有用正确的模式才能把真正的口诀筛出来。」",
+  "npc": "韦小宝",
+  "template": "import re\n\ndef extract_secrets(text: str) -> list:\n    \"\"\"从文本中提取武功口诀\n    \n    口诀规则：2-4个汉字组成的武功名称\n    \"\"\"\n    # TODO: 用正则表达式提取\n    pass\n\n\nif __name__ == \"__main__\":\n    text = \"降龙掌是至刚至阳的掌法，打狗棒法为丐帮镇帮之宝，而九阴白骨爪却为邪术。\"\n    print(extract_secrets(text))\n",
+  "tests": [
+    {"input": "", "expected_output": "['降龙掌', '打狗棒法', '九阴白骨爪']", "display": "提取三个武功口诀"},
+    {"input": "", "expected_output": "['六脉神剑']", "display": "单个口诀"},
+    {"input": "", "expected_output": "[]", "display": "无匹配返回空列表"}
+  ],
+  "hint": "使用 re.findall() 配合中文字符的正则表达式。中文字符的 Unicode 范围可以用 [\\u4e00-\\u9fff] 来匹配。",
+  "knowledge": "正则表达式",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

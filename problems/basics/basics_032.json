@@ -1,0 +1,13 @@
+{
+  "id": "basics_032",
+  "title": "六脉神剑·选择",
+  "description": "段誉的六脉神剑有6种剑法，对应6根手指。\n\n请写一个函数 `sword(finger)`，接收手指编号(1-6)，返回对应剑法名：\n- 1: 少商剑\n- 2: 商阳剑\n- 3: 中冲剑\n- 4: 关冲剑\n- 5: 少冲剑\n- 6: 少泽剑\n\n测试：print(sword(1))，输出 `少商剑`",
+  "story": "段誉手忙脚乱地比划着：「六脉神剑……是哪根手指来着？大拇指是少商剑，食指是商阳剑……」\n\n他一脸茫然地看着你：「帮我写个函数，我老是记混！」",
+  "npc": "段誉",
+  "template": "def sword(finger):\n    \"\"\"根据手指编号返回剑法名\"\"\"\n    # TODO: 用if/elif实现\n    pass\n\nprint(sword(1))\n",
+  "tests": [{"input": "", "expected_output": "少商剑", "display": "sword(1)=少商剑"}],
+  "hint": "用 if/elif/elif... 判断 finger 的值并return对应的剑法名",
+  "knowledge": "if/elif多分支",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

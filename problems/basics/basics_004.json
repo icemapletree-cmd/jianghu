@@ -1,0 +1,22 @@
+{
+  "id": "basics_004",
+  "title": "臂力测试·算术运算",
+  "description": "郭靖憨厚地走过来：「兄弟，我帮你测测臂力！\n  你全力一拳打出 87 点力，我再给你加个 13 点的鼓励。\n  算算总共多少？」\n\n计算 87 + 13 并输出结果。",
+  "story": "郭靖帮你测试基础臂力——其实就是算术运算。",
+  "npc": "郭靖",
+  "template": "# 计算 87 + 13 并输出结果\n",
+  "tests": [
+    {
+      "input": "",
+      "expected_output": "100",
+      "display": "输出87+13的结果"
+    }
+  ],
+  "hint": "print(87 + 13)",
+  "knowledge": "运算",
+  "difficulty": 1,
+  "rewards": {
+    "exp": 50,
+    "silver": 20
+  }
+}

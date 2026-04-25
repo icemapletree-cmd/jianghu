@@ -1,0 +1,13 @@
+{
+  "id": "advanced_014",
+  "title": "鳌拜密信·进阶",
+  "description": "鳌拜用了更复杂的加密——维吉尼亚密码。密钥是 'KEY'。\n\n加密规则：每个字母与密钥对应字母的位移相加。\n解密则是相减。\n\n请写函数 `vigenere_decrypt(text, key)` 解密。\n\n简单测试（位移版）：\n密文 'd'，密钥 'k'(位移10)，解密：ord('d')-ord('a')=3, 减去10 mod 26 = 19, chr(19+97)='t'\n\n但简化测试：用 key='abc' 解密 text='bdf'，输出 'ace'\n（每位移0,1,2位）",
+  "story": "鳌拜的密信越来越复杂了！康熙皱着眉：「这回不是简单的凯撒密码了……」",
+  "npc": "康熙",
+  "template": "def vigenere_decrypt(text, key):\n    \"\"\"维吉尼亚解密\"\"\"\n    result = []\n    key_len = len(key)\n    for i, ch in enumerate(text):\n        if ch.isalpha():\n            shift = ord(key[i % key_len].lower()) - ord('a')\n            # TODO: 解密\n            pass\n        else:\n            result.append(ch)\n    return ''.join(result)\n\nprint(vigenere_decrypt('bdf', 'abc'))\n",
+  "tests": [{"input": "", "expected_output": "ace", "display": "维吉尼亚解密bdf+abc=ace"}],
+  "hint": "decrypted = chr((ord(ch) - ord('a') - shift) % 26 + ord('a'))",
+  "knowledge": "加密算法",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

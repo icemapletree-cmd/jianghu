@@ -1,0 +1,22 @@
+{
+  "id": "basics_018",
+  "title": "武林排行榜·排序",
+  "description": "天龙寺的枯荣大师让你整理一份武林高手排行榜。\n给定一个字典： fighters = {\"乔峰\": 95, \"郭靖\": 88, \"杨过\": 92, \"张无忌\": 90}\n按战力从高到低输出名字，用逗号分隔。\n输出：乔峰,杨过,张无忌,郭靖",
+  "story": "整理武林排行榜——字典排序。",
+  "npc": "枯荣大师",
+  "template": "fighters = {\"乔峰\": 95, \"郭靖\": 88, \"杨过\": 92, \"张无忌\": 90}\n# 按战力从高到低输出名字\n",
+  "tests": [
+    {
+      "input": "",
+      "expected_output": "乔峰,杨过,张无忌,郭靖",
+      "display": "战力排序"
+    }
+  ],
+  "hint": "sorted(fighters.items(), key=lambda x: x[1], reverse=True)",
+  "knowledge": "字典排序",
+  "difficulty": 2,
+  "rewards": {
+    "exp": 65,
+    "silver": 30
+  }
+}

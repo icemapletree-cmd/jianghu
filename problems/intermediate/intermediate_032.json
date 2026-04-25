@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_032",
+  "title": "诈婚·Mock对象",
+  "description": "赵敏善于伪装。请模拟Mock对象：\n\n```python\nclass MockWedding:\n    def __init__(self):\n        self.is_real = False\n        self.call_count = 0\n    \n    def verify(self):\n        self.call_count += 1\n        return self.is_real\n```\n\n创建MockWedding，调用verify()两次，输出调用次数和结果。\n\n输出两行：`False` 和 `验证了2次`",
+  "story": "赵敏笑盈盈地拿出婚约。张无忌一看——是假的！\n\n「这就是Mock对象——看起来像真的，其实不是。」",
+  "npc": "赵敏",
+  "template": "class MockWedding:\n    def __init__(self):\n        self.is_real = False\n        self.call_count = 0\n    \n    def verify(self):\n        # TODO: 增加调用计数，返回真假\n        pass\n\nmock = MockWedding()\nmock.verify()\nmock.verify()\nprint(mock.verify())\nprint(f'验证了{mock.call_count}次')\n",
+  "tests": [{"input": "", "expected_output": "False\n验证了3次", "display": "Mock测试"}],
+  "hint": "self.call_count += 1; return self.is_real（verify被调用3次：2次+1次print中的）",
+  "knowledge": "Mock对象",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

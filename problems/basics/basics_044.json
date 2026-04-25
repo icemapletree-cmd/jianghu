@@ -1,0 +1,13 @@
+{
+  "id": "basics_044",
+  "title": "蝴蝶谷·药方",
+  "description": "胡青牛教张无忌开药方。每种药材有固定用量：\n- 人参: 3钱\n- 当归: 2钱\n- 甘草: 1钱\n\n请写函数 `prescription(renshen, danggui, gancao)` 返回总用量。\n\n测试：`print(prescription(3, 2, 1))` 输出 `14`（3×3 + 2×2 + 1×1）",
+  "story": "蝴蝶谷中，胡青牛手把手教张无忌辨识药材。\n\n「用药如用兵，每味药材都有固定用量。人参三钱、当归二钱、甘草一钱——记住了？」\n\n张无忌认真地点头。",
+  "npc": "张无忌",
+  "template": "def prescription(renshen, danggui, gancao):\n    \"\"\"计算药方总用量（每味用量×单钱数之和）\"\"\"\n    # 人参3钱/份, 当归2钱/份, 甘草1钱/份\n    # TODO\n    pass\n\nprint(prescription(3, 2, 1))\n",
+  "tests": [{"input": "", "expected_output": "14", "display": "药方总用量"}],
+  "hint": "return renshen*3 + danggui*2 + gancao*1",
+  "knowledge": "函数参数",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

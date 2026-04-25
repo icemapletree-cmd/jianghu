@@ -1,0 +1,27 @@
+{
+  "id": "basics_005",
+  "title": "江湖对话·input心法",
+  "description": "你走进一家客栈，老板热情地问：\n\n「大侠怎么称呼？」\n\n用 input() 接收输入，然后输出：\n「欢迎光临，{名字}大侠！」",
+  "story": "客栈老板教你怎么跟人打交道——input交互。",
+  "npc": "客栈老板",
+  "template": "# 用 input() 接收名字\n# 输出：欢迎光临，{名字}大侠！\n",
+  "tests": [
+    {
+      "input": "令狐冲",
+      "expected_output": "欢迎光临，令狐冲大侠！",
+      "display": "输入令狐冲，输出欢迎语"
+    },
+    {
+      "input": "郭靖",
+      "expected_output": "欢迎光临，郭靖大侠！",
+      "display": "输入郭靖，输出欢迎语"
+    }
+  ],
+  "hint": "name = input()\\nprint(f\"欢迎光临，{name}大侠！\")",
+  "knowledge": "input",
+  "difficulty": 1,
+  "rewards": {
+    "exp": 60,
+    "silver": 25
+  }
+}

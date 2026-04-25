@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_021",
+  "title": "嵩山围攻·筛选",
+  "description": "嵩山派围攻华山，各派高手数据如下：\n```python\nfighters = [\n    {'name': '左冷禅', 'power': 85, 'side': '嵩山'},\n    {'name': '令狐冲', 'power': 90, 'side': '华山'},\n    {'name': '岳不群', 'power': 80, 'side': '华山'},\n    {'name': '天门道人', 'power': 70, 'side': '泰山'},\n    {'name': '定闲师太', 'power': 75, 'side': '恒山'},\n]\n```\n\n请用列表推导式筛选出 power >= 80 的高手名字，输出列表。\n\n输出：`['左冷禅', '令狐冲', '岳不群']`",
+  "story": "嵩山派联合各派围攻华山！你需要快速找出实力最强的对手。\n\n令狐冲醉醺醺地说：「只看80以上的就行了。」",
+  "npc": "令狐冲",
+  "template": "fighters = [\n    {'name': '左冷禅', 'power': 85, 'side': '嵩山'},\n    {'name': '令狐冲', 'power': 90, 'side': '华山'},\n    {'name': '岳不群', 'power': 80, 'side': '华山'},\n    {'name': '天门道人', 'power': 70, 'side': '泰山'},\n    {'name': '定闲师太', 'power': 75, 'side': '恒山'},\n]\n\n# TODO: 列表推导式筛选 power>=80 的名字\n",
+  "tests": [{"input": "", "expected_output": "['左冷禅', '令狐冲', '岳不群']", "display": "筛选高手"}],
+  "hint": "[f['name'] for f in fighters if f['power'] >= 80]",
+  "knowledge": "列表推导式+字典",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

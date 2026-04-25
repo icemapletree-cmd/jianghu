@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🗡️ 江湖行 — Python 武侠学习游戏</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div id="app">
+    <!-- 标题画面 -->
+    <div id="title-screen" class="screen active">
+        <div class="title-art">
+            <pre class="ascii-art">
+╔══════════════════════════════════════╗
+║          🗡️  江 湖 行  🗡️            ║
+║    Python 武侠学习 · 文字冒险游戏    ║
+╚══════════════════════════════════════╝
+            </pre>
+            <p class="subtitle">「以武悟码，以码证道」</p>
+        </div>
+        <div class="menu-buttons">
+            <button onclick="showCreate()" class="btn btn-primary">⚔️ 新游戏</button>
+            <button onclick="showLoad()" class="btn">💾 读取封印玉简</button>
+        </div>
+    </div>
+
+    <!-- 创建角色 -->
+    <div id="create-screen" class="screen">
+        <h2>📝 创建角色</h2>
+        <div class="create-form">
+            <input type="text" id="char-name" placeholder="大侠怎么称呼？" maxlength="20">
+            <p>序章选择（决定初始属性加成）：</p>
+            <div class="choice-grid">
+                <button onclick="selectPrologue(1)" class="btn choice-btn" data-choice="1">
+                    🙏 躲在佛像后面<br><small>（悟性+2）</small>
+                </button>
+                <button onclick="selectPrologue(2)" class="btn choice-btn" data-choice="2">
+                    🧑‍🦲 假装小和尚<br><small>（福缘+2）</small>
+                </button>
+                <button onclick="selectPrologue(3)" class="btn choice-btn" data-choice="3">
+                    🗡️ 抄木棍硬刚<br><small>（臂力+2）</small>
+                </button>
+                <button onclick="selectPrologue(4)" class="btn choice-btn" data-choice="4">
+                    🏃 从后窗逃跑<br><small>（身法+2）</small>
+                </button>
+            </div>
+            <button onclick="createCharacter()" class="btn btn-primary" id="start-btn" disabled>开始江湖之旅</button>
+        </div>
+    </div>
+
+    <!-- 游戏主界面 -->
+    <div id="game-screen" class="screen">
+        <div class="game-layout">
+            <!-- 左面板：角色+地图 -->
+            <div class="side-panel left-panel">
+                <div class="panel character-panel">
+                    <h3>👤 <span id="char-name-display">无名侠客</span></h3>
+                    <div class="stat-bar"><span>❤️ 气血</span><div class="bar"><div class="bar-fill hp" id="hp-bar"></div></div><span id="hp-text">100/100</span></div>
+                    <div class="stat-bar"><span>🔮 内力</span><div class="bar"><div class="bar-fill mp" id="mp-bar"></div></div><span id="mp-text">50/50</span></div>
+                    <div class="stats-grid">
+                        <div>📊 Lv.<span id="level">0</span> <span id="level-name">江湖铜人</span></div>
+                        <div>💰 <span id="silver">100</span>两</div>
+                        <div>⚔️ <span id="exp">0</span> EXP</div>
+                        <div>📍 <span id="location">破庙</span></div>
+                    </div>
+                </div>
+                <div class="panel chapter-panel">
+                    <h3>📜 当前章节</h3>
+                    <div id="chapter-info">第1章：江湖初行</div>
+                </div>
+            </div>
+
+            <!-- 中间：剧情区 -->
+            <div class="main-panel">
+                <div class="narration-area" id="narration">
+                    <div class="narration-text" id="narration-text">
+                        欢迎来到江湖……
+                    </div>
+                </div>
+
+                <!-- 操作按钮区 -->
+                <div class="action-area" id="action-area">
+                    <div class="action-grid" id="main-actions">
+                        <button onclick="doTravel()" class="btn action-btn">🗺️ 游历江湖</button>
+                        <button onclick="doTalk()" class="btn action-btn">💬 与人交谈</button>
+                        <button onclick="doPractice()" class="btn action-btn">⚔️ 修炼武功</button>
+                        <button onclick="doQuests()" class="btn action-btn">📜 查看任务</button>
+                        <button onclick="doInventory()" class="btn action-btn">🎒 背包</button>
+                        <button onclick="doSave()" class="btn action-btn">💾 封印玉简</button>
+                    </div>
+                    <!-- 动态操作区 -->
+                    <div id="dynamic-actions"></div>
+                </div>
+            </div>
+
+            <!-- 右面板：代码编辑器 -->
+            <div class="side-panel right-panel">
+                <div class="panel code-panel">
+                    <h3>💻 代码修炼</h3>
+                    <div class="problem-info" id="problem-info" style="display:none">
+                        <div class="problem-title" id="problem-title"></div>
+                        <div class="problem-desc" id="problem-desc"></div>
+                    </div>
+                    <textarea id="code-editor" class="code-editor" placeholder="# 在此编写代码...\nprint('Hello, 江湖!')"></textarea>
+                    <div class="code-actions">
+                        <button onclick="submitCode()" class="btn btn-primary" id="submit-btn">▶ 运行</button>
+                        <button onclick="showHint()" class="btn" id="hint-btn" style="display:none">💡 提示</button>
+                        <button onclick="clearEditor()" class="btn">🗑️ 清空</button>
+                    </div>
+                    <div class="output-area" id="output-area" style="display:none">
+                        <pre id="output-text"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/static/js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "id": "advanced_006",
+  "title": "降龙十八掌·第十七式",
+  "description": "华山论剑在即，郭靖需要将各路高手的武功按威力值从大到小排序。\n\n请实现**选择排序**算法：\n\n定义函数 `selection_sort_desc(martial_arts: list) -> list`，接收一个列表，每个元素是 `[武功名, 威力值]` 的格式，返回按威力值从大到小排序后的列表。\n\n**示例：**\n```python\narts = [[\"降龙掌\", 95], [\"打狗棒法\", 80], [\"九阴爪\", 70], [\"太极拳\", 88]]\nresult = selection_sort_desc(arts)\nprint(result)  # [['降龙掌', 95], ['太极拳', 88], ['打狗棒法', 80], ['九阴爪', 70]]\n```",
+  "story": "郭靖挠了挠头，看着一长串武功排行榜发愁：「黄蓉，这些武功怎么排啊？数字太多了……」\n\n黄蓉翻了个白眼：「靖哥哥，你用选择排序嘛！每次挑最大的放前面，简单粗暴，跟你打人一样。」\n\n郭靖：「选择排序？」\n\n黄蓉：「对！你每次从剩下的里面选最强的，放到已排好的末尾。就像你打架，先挑最厉害的对手！」\n\n洪七公在旁边哈哈大笑：「好小子，排序都学不会，怎么学降龙十八掌！」",
+  "npc": "郭靖",
+  "template": "def selection_sort_desc(martial_arts: list) -> list:\n    \"\"\"选择排序（降序）\n    \n    Args:\n        martial_arts: [[武功名, 威力值], ...] 列表\n    Returns:\n        按威力值从大到小排序后的列表\n    \"\"\"\n    # TODO: 实现选择排序\n    pass\n\n\nif __name__ == \"__main__\":\n    arts = [[\"降龙掌\", 95], [\"打狗棒法\", 80], [\"九阴爪\", 70], [\"太极拳\", 88]]\n    result = selection_sort_desc(arts)\n    print(result)\n",
+  "tests": [
+    {"input": "", "expected_output": "[['降龙掌', 95], ['太极拳', 88], ['打狗棒法', 80], ['九阴爪', 70]]", "display": "基本降序排序"},
+    {"input": "", "expected_output": "[['独孤九剑', 99]]", "display": "单元素列表"},
+    {"input": "", "expected_output": "[]", "display": "空列表"},
+    {"input": "", "expected_output": "[['六脉神剑', 92], ['易筋经', 90], ['北冥神功', 85], ['凌波微步', 78], ['天山折梅手', 75]]", "display": "5个元素排序"}
+  ],
+  "hint": "选择排序的思路：外层循环从0到n-1，内层循环找剩余元素中最大的，然后与当前位置交换。注意要交换整个[武功名, 威力值]元素。",
+  "knowledge": "排序算法",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

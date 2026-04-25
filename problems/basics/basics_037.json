@@ -1,0 +1,13 @@
+{
+  "id": "basics_037",
+  "title": "活死人墓·闭包",
+  "description": "古墓派武功讲究封闭修炼。请写一个函数 `tomb_secret(level)`，返回一个函数：\n- 返回的函数接收一个参数 `name`\n- 返回 `\"{name}已学会古墓{level}层心法\"`\n\n测试：\n```python\nf = tomb_secret(3)\nprint(f('杨过'))  # 杨过已学会古墓3层心法\n```",
+  "story": "小龙女带你进入活死人墓。石门轰然关闭，四周一片漆黑。\n\n「古墓武功，不传外人。但你……可以学。」\n\n她的声音冰冷如水，却带着一丝温柔。",
+  "npc": "小龙女",
+  "template": "def tomb_secret(level):\n    def learn(name):\n        # TODO\n        pass\n    return learn\n\nf = tomb_secret(3)\nprint(f('杨过'))\n",
+  "tests": [{"input": "", "expected_output": "杨过已学会古墓3层心法", "display": "古墓闭包测试"}],
+  "hint": "learn函数内部引用外部的level变量，return f'{name}已学会古墓{level}层心法'",
+  "knowledge": "闭包基础",
+  "difficulty": 1,
+  "rewards": {"exp": 70, "silver": 30}
+}

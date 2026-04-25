@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_030",
+  "title": "乾坤大挪移·元编程",
+  "description": "乾坤大挪移可以在运行时改变对象属性！请实现：\n\n```python\nclass Fighter:\n    def __init__(self, name):\n        self.name = name\n        self.skill = '基础拳法'\n\ndef transfer_skill(fighter, new_skill):\n    \"\"\"乾坤大挪移：运行时转移技能\"\"\"\n    old = fighter.skill\n    fighter.skill = new_skill\n    return f'{fighter.name}：{old} → {new_skill}'\n```\n\n创建Fighter('张无忌')，transfer_skill为'太极拳'，输出结果。\n\n输出：`张无忌：基础拳法 → 太极拳`",
+  "story": "张无忌在光明顶密道学会了乾坤大挪移——运行时改变一切属性！\n\n「以彼之道，还施彼身。不对，那是慕容家的。这是——元编程！」",
+  "npc": "张无忌",
+  "template": "class Fighter:\n    def __init__(self, name):\n        self.name = name\n        self.skill = '基础拳法'\n\ndef transfer_skill(fighter, new_skill):\n    # TODO: 记录旧技能，替换新技能\n    pass\n\nzwj = Fighter('张无忌')\nprint(transfer_skill(zwj, '太极拳'))\n",
+  "tests": [{"input": "", "expected_output": "张无忌：基础拳法 → 太极拳", "display": "元编程属性修改"}],
+  "hint": "old = fighter.skill; fighter.skill = new_skill; return f'{fighter.name}：{old} → {new_skill}'",
+  "knowledge": "元编程基础",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

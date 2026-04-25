@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_028",
+  "title": "五轮齐出·并行模拟",
+  "description": "金轮法王的五轮可以同时出击。用高阶函数模拟并行：\n\n```python\ndef parallel_attack(wheels: list) -> list:\n    \"\"\"模拟五轮同时出击，返回每个轮的攻击结果\"\"\"\n    return [f'{w}命中' for w in wheels]\n```\n\n调用 parallel_attack(['金', '银', '铜', '铁', '铅']) 并输出。",
+  "story": "金轮法王五指齐弹，五个法轮同时飞出——并行攻击！",
+  "npc": "金轮法王",
+  "template": "def parallel_attack(wheels: list) -> list:\n    # TODO\n    pass\n\nprint(parallel_attack(['金', '银', '铜', '铁', '铅']))\n",
+  "tests": [{"input": "", "expected_output": "['金命中', '银命中', '铜命中', '铁命中', '铅命中']", "display": "并行攻击"}],
+  "hint": "return [f'{w}命中' for w in wheels]",
+  "knowledge": "高阶函数模拟并行",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

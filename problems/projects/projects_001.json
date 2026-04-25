@@ -1,0 +1,13 @@
+{
+  "id": "projects_001",
+  "title": "🏆 华山论剑·排行榜",
+  "description": "这是第五章的终极项目。请实现一个完整的武林排行榜系统，包含以下功能：\n\n1. `WulinRanking` 类：\n   - `add_hero(name, faction, power)` — 添加高手\n   - `record_battle(winner, loser)` — 记录战斗结果\n   - `get_top(n)` — 返回综合排名前n名\n   - `get_faction_score()` — 返回门派积分排名\n   - `export_ranking()` — 返回排行榜字符串\n\n综合分 = power * (1 + wins * 0.1)\n\n测试代码会创建3个高手，记录2场战斗，然后输出top 3。\n\n输出格式：每行 `排名. 名字(门派) - 综合分:XX`",
+  "story": "华山之巅，群雄毕至。\n\n你拿出自己设计的武林排行榜系统，逐一展示各路高手的排名。\n\n「以武悟码，以码证道。天下第一，当之无愧！」",
+  "npc": "王重阳",
+  "template": "class WulinRanking:\n    def __init__(self):\n        self.heroes = {}\n    \n    def add_hero(self, name, faction, power):\n        # TODO\n        pass\n    \n    def record_battle(self, winner, loser):\n        # TODO\n        pass\n    \n    def get_top(self, n=3):\n        # TODO\n        pass\n    \n    def export_ranking(self):\n        # TODO\n        pass\n\n# 测试\nwr = WulinRanking()\nwr.add_hero('乔峰', '丐帮', 95)\nwr.add_hero('虚竹', '少林', 90)\nwr.add_hero('段誉', '大理', 85)\nwr.record_battle('乔峰', '段誉')\nwr.record_battle('虚竹', '段誉')\nprint(wr.export_ranking())\n",
+  "tests": [{"input": "", "expected_output": "1. 乔峰(丐帮) - 综合分:104\n2. 虚竹(少林) - 综合分:99\n3. 段誉(大理) - 综合分:85", "display": "武林排行榜输出"}],
+  "hint": "综合分 = power * (1 + wins * 0.1)。乔峰1胜：95*(1+0.1)=104.5≈104, 虚竹1胜：90*1.1=99, 段誉0胜：85",
+  "knowledge": "综合项目",
+  "difficulty": 3,
+  "rewards": {"exp": 500, "silver": 200}
+}

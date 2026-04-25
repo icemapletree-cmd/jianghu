@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_025",
+  "title": "玉女心经·闭包进阶",
+  "description": "小龙女的玉女心经可以叠加修炼层数。请实现一个闭包计数器：\n\n```python\ndef jade_maiden():\n    level = 0\n    def practice():\n        nonlocal level\n        level += 1\n        return level\n    return practice\n```\n\n创建练习函数，调用3次，输出：`1 2 3`（空格分隔）\n\n输出：`1 2 3`",
+  "story": "小龙女：「玉女心经要一层一层修炼。闭包可以记住你练到了第几层。」",
+  "npc": "小龙女",
+  "template": "def jade_maiden():\n    level = 0\n    def practice():\n        # TODO: nonlocal + 递增\n        pass\n    return practice\n\np = jade_maiden()\nprint(p(), p(), p())\n",
+  "tests": [{"input": "", "expected_output": "1 2 3", "display": "闭包计数器"}],
+  "hint": "nonlocal level; level += 1; return level",
+  "knowledge": "闭包进阶",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

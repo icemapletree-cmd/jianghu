@@ -1,0 +1,13 @@
+{
+  "id": "advanced_013",
+  "title": "镜像之战·重构",
+  "description": "你的镜像写了一段糟糕的代码来管理武功列表。请重构它：\n\n**原始代码：**\n```python\nskills = []\nskills.append('降龙掌')\nskills.append('打狗棒法')\nskills.append('太极拳')\nskills.append('独孤九剑')\nresult = []\nfor s in skills:\n    if len(s) >= 4:\n        result.append(s.upper())\nprint(result)\n```\n\n请用**一行列表推导式**实现相同功能：筛选名字长度>=4的武功，转为大写。\n\n输出：`['降龙掌', '打狗棒法', '太极拳', '独孤九剑']`\n\n（注：中文大写不变，测试实际用英文数据）\n\n```python\nskills = ['Palm', 'Staff', 'Taichi', 'Sword', 'Kick']\n```\n筛选长度>=4，转大写，输出。",
+  "story": "你的镜像出现了！它写的代码又臭又长。你需要用更优雅的方式重写，证明你更强！\n\n「代码之道，在于简洁。」——独孤求败",
+  "npc": "镜像",
+  "template": "skills = ['Palm', 'Staff', 'Taichi', 'Sword', 'Kick']\n\n# TODO: 一行列表推导式\nresult = \nprint(result)\n",
+  "tests": [{"input": "", "expected_output": "['STAFF', 'TAICHI', 'SWORD']", "display": "重构后的列表推导式"}],
+  "hint": "[s.upper() for s in skills if len(s) >= 4]",
+  "knowledge": "列表推导式+重构",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

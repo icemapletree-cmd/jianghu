@@ -1,0 +1,13 @@
+{
+  "id": "basics_042",
+  "title": "十六年·等待",
+  "description": "杨过在绝情谷等了16年。请用range生成1到16的年份列表，然后输出。\n\n输出：`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]`",
+  "story": "杨过站在断肠崖边，目光空洞。\n\n「龙儿说等我十六年……第一年、第二年、第三年……」\n\n他一等就是十六年。\n\n崖壁上刻满了「龙儿」两个字。",
+  "npc": "杨过",
+  "template": "# 生成1到16的年份列表\nyears = list(range(???))\nprint(years)\n",
+  "tests": [{"input": "", "expected_output": "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]", "display": "16年等待"}],
+  "hint": "range(1, 17) 生成1到16",
+  "knowledge": "range函数",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

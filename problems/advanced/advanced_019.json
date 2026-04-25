@@ -1,0 +1,13 @@
+{
+  "id": "advanced_019",
+  "title": "一见杨过·误终身",
+  "description": "郭襄初遇杨过，从此念念不忘。请用迭代器协议实现「思念」：\n\n```python\nclass Yearning:\n    def __init__(self, person, years):\n        self.person = person\n        self.years = years\n        self.current = 0\n    \n    def __iter__(self):\n        return self\n    \n    def __next__(self):\n        if self.current >= self.years:\n            raise StopIteration\n        self.current += 1\n        return f'第{self.current}年：想念{self.person}'\n```\n\n创建 Yearning('杨过', 3)，用list()消费，输出列表。",
+  "story": "郭襄风陵渡口初遇杨过，从此一见误终身。\n\n她用一生的时间去思念——迭代器协议，一年接一年，永不停歇。\n\n「风陵渡口初相遇，一见杨过误终身。」",
+  "npc": "郭襄",
+  "template": "class Yearning:\n    def __init__(self, person, years):\n        self.person = person\n        self.years = years\n        self.current = 0\n    \n    def __iter__(self):\n        # TODO\n        pass\n    \n    def __next__(self):\n        # TODO\n        pass\n\ny = Yearning('杨过', 3)\nprint(list(y))\n",
+  "tests": [{"input": "", "expected_output": "['第1年：想念杨过', '第2年：想念杨过', '第3年：想念杨过']", "display": "迭代器思念"}],
+  "hint": "__iter__ return self; __next__中if self.current >= self.years: raise StopIteration; self.current += 1; return f'第{self.current}年：想念{self.person}'",
+  "knowledge": "迭代器协议",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

@@ -1,0 +1,17 @@
+{
+  "id": "advanced_008",
+  "title": "九阴真经·总纲",
+  "description": "你已学贯百家，现在需要将所有武功整合为统一的武学体系。\n\n请使用**策略模式（Strategy Pattern）**：\n\n1. 定义抽象基类 `MartialArt`，有方法 `attack() -> str`\n2. 定义三个子类：\n   - `SwordArt`（剑法）: attack() 返回 \"剑气纵横三万里\"\n   - `PalmArt`（掌法）: attack() 返回 \"掌风如山摧五岳\"\n   - `InternalArt`（内功）: attack() 返回 \"内力浑厚贯长虹\"\n3. 定义 `Fighter` 类：\n   - `__init__(self, name)`：初始化名字\n   - `set_art(self, art)`：设置武功策略\n   - `fight(self) -> str`：返回 f\"{name}施展绝学：{art.attack()}\"\n\n**示例：**\n```python\nf = Fighter(\"张无忌\")\nf.set_art(SwordArt())\nprint(f.fight())  # 张无忌施展绝学：剑气纵横三万里\n\nf.set_art(PalmArt())\nprint(f.fight())  # 张无忌施展绝学：掌风如山摧五岳\n```",
+  "story": "华山之巅，月色如银。\n\n你翻开九阴真经最后一页，上面写着：\n\n「武学之道，不在招式之多，而在融会贯通。\n  以统一之接口，御万千之变化。\n  此乃——设计模式。」\n\n王重阳的虚影出现在你面前：「善。你已经触及了编程之道的最高境界——将变化封装，将不变抽象。这就是策略模式的精髓。」\n\n你深吸一口气，开始整合毕生所学。",
+  "npc": "王重阳",
+  "template": "from abc import ABC, abstractmethod\n\n\nclass MartialArt(ABC):\n    \"\"\"武功策略基类\"\"\"\n    @abstractmethod\n    def attack(self) -> str:\n        pass\n\n\nclass SwordArt(MartialArt):\n    \"\"\"剑法\"\"\"\n    # TODO\n    pass\n\n\nclass PalmArt(MartialArt):\n    \"\"\"掌法\"\"\"\n    # TODO\n    pass\n\n\nclass InternalArt(MartialArt):\n    \"\"\"内功\"\"\"\n    # TODO\n    pass\n\n\nclass Fighter:\n    \"\"\"武者——可切换武功策略\"\"\"\n    def __init__(self, name: str):\n        # TODO\n        pass\n    \n    def set_art(self, art: MartialArt):\n        # TODO\n        pass\n    \n    def fight(self) -> str:\n        # TODO\n        pass\n\n\nif __name__ == \"__main__\":\n    f = Fighter(\"张无忌\")\n    f.set_art(SwordArt())\n    print(f.fight())\n    f.set_art(PalmArt())\n    print(f.fight())\n    f.set_art(InternalArt())\n    print(f.fight())\n",
+  "tests": [
+    {"input": "", "expected_output": "张无忌施展绝学：剑气纵横三万里\n张无忌施展绝学：掌风如山摧五岳\n张无忌施展绝学：内力浑厚贯长虹", "display": "三种武功策略切换"},
+    {"input": "", "expected_output": "郭靖施展绝学：掌风如山摧五岳", "display": "掌法策略"},
+    {"input": "", "expected_output": "令狐冲施展绝学：剑气纵横三万里", "display": "剑法策略"}
+  ],
+  "hint": "策略模式的关键：定义统一接口（MartialArt的attack方法），不同子类实现各自的attack。Fighter持有一个MartialArt引用，通过set_art动态切换。",
+  "knowledge": "设计模式",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

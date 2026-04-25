@@ -1,0 +1,18 @@
+{
+  "id": "intermediate_006",
+  "title": "金钟罩·护体功",
+  "description": "你在修炼金钟罩时内息走岔，程序中出现了危险的除零错误！你需要用 try/except 捕获异常，化险为夷。\n\n**要求：**\n- 定义函数 `safe_divide(a, b)`\n- 尝试计算 `a / b` 并返回结果（转为字符串形式）\n- 如果发生 `ZeroDivisionError`（b 为 0），返回字符串 `\"化险为夷\"`\n- 如果发生 `TypeError`（参数类型不对），返回字符串 `\"走火入魔\"`\n- 返回的结果统一转为字符串\n\n**示例：**\n```python\nprint(safe_divide(10, 3))    # 输出：3.3333333333333335\nprint(safe_divide(10, 2))    # 输出：5.0\nprint(safe_divide(10, 0))    # 输出：化险为夷\nprint(safe_divide(10, \"a\"))  # 输出：走火入魔\n```",
+  "story": "少林后山练功房内，你正按部就班地修炼金钟罩护体功。忽然，一股逆流真气直冲天灵盖——你竟然在修炼中走火入魔了！\n\n玄难大师及时赶到，一掌拍在你背心：「莫慌！修炼之道，难免出错。关键不在于不犯错，而在于犯错之后能从容化解。」\n\n他教你一套化解之法：「用 try 把可能出错的修炼步骤包裹起来，再用 except 捕获不同的异常。除以零的错误用 ZeroDivisionError 捕获，类型不对用 TypeError 捕获。如此一来，纵然内息逆行，也能化险为夷。」",
+  "npc": "玄难大师",
+  "template": "# 定义函数 safe_divide(a, b)\n# 用 try/except 捕获异常\n\ndef safe_divide(a, b):\n    try:\n        # 尝试计算 a / b\n        pass\n    except ZeroDivisionError:\n        # 除零错误，返回 \"化险为夷\"\n        pass\n    except TypeError:\n        # 类型错误，返回 \"走火入魔\"\n        pass\n",
+  "tests": [
+    {"input": "safe_divide(10, 3)", "expected_output": "3.3333333333333335", "display": "正常除法计算"},
+    {"input": "safe_divide(10, 2)", "expected_output": "5.0", "display": "整除计算"},
+    {"input": "safe_divide(10, 0)", "expected_output": "化险为夷", "display": "捕获除零错误"},
+    {"input": "safe_divide(10, \"a\")", "expected_output": "走火入魔", "display": "捕获类型错误"}
+  ],
+  "hint": "try 块里放 a / b，然后分别用 except ZeroDivisionError 和 except TypeError 捕获两种异常。记得把结果转为字符串返回。",
+  "knowledge": "异常处理",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

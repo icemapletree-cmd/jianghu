@@ -1,0 +1,22 @@
+{
+  "id": "basics_008",
+  "title": "修炼内功·while循环",
+  "description": "你在后山修炼内功，需要持续运转直到内力充满。\n\n「内力从 0 开始修炼，每次增加 10，\n  直到内力达到或超过 50 时停止。\n  输出每次修炼后的内力值。」\n\n输出格式（每行一个）：\n10\n20\n30\n40\n50",
+  "story": "后山修炼，用while循环模拟内力增长。",
+  "npc": "修炼",
+  "template": "# 用 while 循环，从 0 开始每次加 10\n# 到 50 停止，输出每次的值\n",
+  "tests": [
+    {
+      "input": "",
+      "expected_output": "10\n20\n30\n40\n50",
+      "display": "输出10到50"
+    }
+  ],
+  "hint": "power = 0\\nwhile power < 50: power += 10; print(power)",
+  "knowledge": "while",
+  "difficulty": 1,
+  "rewards": {
+    "exp": 60,
+    "silver": 25
+  }
+}

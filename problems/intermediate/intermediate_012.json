@@ -1,0 +1,16 @@
+{
+  "id": "intermediate_012",
+  "title": "葵花宝典·心法残篇",
+  "description": "日月神教在黑木崖密室中发现了一页葵花宝典残篇，上面记载着一种神奇的武功——用装饰器给招式附加特殊效果。\n\n**要求：**\n- 定义装饰器函数 `power_up(func)`\n- 装饰器的效果：在调用原函数前后各打印一行文字\n  - 调用前打印 `\"金光闪烁，功力提升！\"`\n  - 调用原函数并获取返回值\n  - 调用后打印 `\"余威未尽，天地变色！\"`\n  - 返回原函数的返回值\n- 已给出的被装饰函数：\n```python\n@power_up\ndef palm_strike(name):\n    return f\"{name}一掌拍出！\"\n```\n- 你需要定义 `power_up` 装饰器，使上述代码正确工作\n\n**示例：**\n```python\nresult = palm_strike(\"东方不败\")\n# 控制台输出：\n# 金光闪烁，功力提升！\n# 余威未尽，天地变色！\nprint(result)  # 输出：东方不败一掌拍出！\n```",
+  "story": "黑木崖日月神教总坛深处，一间密室的石壁上刻着一段密密麻麻的文字。东方不败凝视良久，忽然仰天大笑。\n\n「妙！妙极！这葵花宝典残篇记载的不是什么新招式，而是一种给任何招式附加效果的法门——所谓『装饰器』！」\n\n她红衣飘动，转过身来：「你想想，任何一个普通招式，加上这层装饰，便能在出招前后产生额外效果。不需要修改招式本身，却能让它脱胎换骨。这不正是武学的最高境界——不改变本质，却超越本质？」",
+  "npc": "东方不败",
+  "template": "# 定义装饰器 power_up\n\ndef power_up(func):\n    def wrapper(*args, **kwargs):\n        # 调用前打印 \"金光闪烁，功力提升！\"\n        # 调用原函数\n        # 调用后打印 \"余威未尽，天地变色！\"\n        # 返回原函数的返回值\n        pass\n    return wrapper\n\n# 被装饰的函数（不要修改）\n@power_up\ndef palm_strike(name):\n    return f\"{name}一掌拍出！\"\n",
+  "tests": [
+    {"input": "palm_strike(\"东方不败\")", "expected_output": "东方不败一掌拍出！", "display": "装饰后的函数返回正确结果"},
+    {"input": "palm_strike(\"令狐冲\")", "expected_output": "令狐冲一掌拍出！", "display": "不同参数同样生效"}
+  ],
+  "hint": "装饰器是一个接收函数作为参数、返回新函数的高阶函数。内部定义 wrapper 函数，在其中先打印前缀、调用原函数、打印后缀，最后返回原函数的返回值。",
+  "knowledge": "装饰器",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

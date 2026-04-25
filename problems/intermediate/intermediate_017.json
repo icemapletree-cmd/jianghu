@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_017",
+  "title": "吸星大法·增强",
+  "description": "任我行的吸星大法可以增强任何武功。请写一个装饰器 `@boost`：\n\n被装饰的函数返回字符串，装饰器在返回值前加上\"⚡增强版⚡\"，后面加上\"！\"。\n\n示例：\n```python\n@boost\ndef palm():\n    return '降龙掌'\nprint(palm())  # ⚡增强版⚡降龙掌！\n```",
+  "story": "任我行狂笑道：「吸星大法可以吸取他人内力增强自己！看好了！」\n\n他双手一吸，掌力暴涨。任何武功经过吸星大法增强，威力都翻倍！",
+  "npc": "任我行",
+  "template": "def boost(func):\n    \"\"\"增强装饰器\"\"\"\n    # TODO\n    pass\n\n@boost\ndef palm():\n    return '降龙掌'\n\nprint(palm())\n",
+  "tests": [{"input": "", "expected_output": "⚡增强版⚡降龙掌！", "display": "装饰器增强效果"}],
+  "hint": "def wrapper(): return f'⚡增强版⚡{func()}！'; return wrapper",
+  "knowledge": "装饰器进阶",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

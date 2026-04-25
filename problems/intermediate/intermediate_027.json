@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_027",
+  "title": "十六年·数据持久化",
+  "description": "杨过等了16年，每年记录一条消息。模拟数据保存与恢复：\n\n```python\ndef save_messages(years: int) -> list:\n    return [f'第{y}年：依然在等' for y in range(1, years+1)]\n\ndef load_messages(data: list) -> str:\n    return data[-1]  # 返回最后一条\n```\n\n调用 save_messages(16) 保存，然后用 load_messages 读取最后一条并输出。\n\n输出：`第16年：依然在等`",
+  "story": "十六年……每一年的等待都刻在了崖壁上。\n\n杨过将每年的思念记录下来，如同数据持久化——即使程序重启，数据依然在。",
+  "npc": "杨过",
+  "template": "def save_messages(years: int) -> list:\n    # TODO: 生成消息列表\n    pass\n\ndef load_messages(data: list) -> str:\n    # TODO: 返回最后一条\n    pass\n\nmessages = save_messages(16)\nprint(load_messages(messages))\n",
+  "tests": [{"input": "", "expected_output": "第16年：依然在等", "display": "数据持久化"}],
+  "hint": "save用列表推导式，load用data[-1]",
+  "knowledge": "数据持久化",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

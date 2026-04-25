@@ -1,0 +1,32 @@
+{
+  "id": "advanced_003",
+  "title": "左右互搏术",
+  "description": "周伯通被关在桃花岛十五年，闲极无聊，竟创出一套双手各使不同武功的奇妙招数。\n\n请编写函数 `simulate_dual_attack(left_moves, right_moves)`，模拟左右手同时出招的场景。\n\n要求：\n1. 函数接收两个列表 `left_moves` 和 `right_moves`，分别代表左右手的招式序列\n2. 用**列表推导式**将两只手的招式配对组合，格式为 `「左手{左招}，右手{右招}」`\n3. 配对规则：使用 `zip` 函数配对，取较短列表的长度\n4. 将所有组合按招式名称的**字典序**排序\n5. 返回排序后的列表\n\n**示例：**\n```python\nresult = simulate_dual_attack(\n    ['降龙掌', '空明拳', '大伏魔拳'],\n    ['九阴白骨爪', '空明拳', '一阳指']\n)\nfor line in result:\n    print(line)\n```\n输出应为：\n```\n左手空明拳，右手空明拳\n左手空明拳，右手一阳指\n左手降龙掌，右手九阴白骨爪\n左手大伏魔拳，右手一阳指\n```\n\n**另一个示例：**\n```python\nresult = simulate_dual_attack(\n    ['A', 'B'],\n    ['X', 'Y', 'Z']\n)\nfor line in result:\n    print(line)\n```\n输出应为：\n```\n左手A，右手X\n左手A，右手Y\n左手B，右手X\n左手B，右手Y\n```\n\n等等……不对，让我重新描述。请仔细阅读下方精确定义。\n\n---\n\n重新精确定义：\n\n`simulate_dual_attack(left_moves, right_moves)`：\n1. 用 `zip(left_moves, right_moves)` 配对（取较短长度）\n2. 对每对 `(left, right)`，生成字符串 `「左手{left}，右手{right}」`\n3. 将所有字符串**按字典序排序**后返回\n\n```python\nresult = simulate_dual_attack(\n    ['降龙掌', '空明拳', '大伏魔拳'],\n    ['九阴白骨爪', '空明拳', '一阳指']\n)\nfor line in result:\n    print(line)\n```\n输出：\n```\n左手降龙掌，右手九阴白骨爪\n左手大伏魔拳，右手一阳指\n左手空明拳，右手空明拳\n```\n\n```python\nresult = simulate_dual_attack(\n    ['拳', '掌', '指'],\n    ['攻', '守']\n)\nfor line in result:\n    print(line)\n```\n输出：\n```\n左手拳，右手攻\n左手掌，右手守\n```\n\n注意：第二个例子 zip 只配对2组（取较短列表的长度）。",
+  "story": "桃花岛石窟之中，一个白发老者倒挂在岩壁上，双手各持一块石头，竟同时画出了两幅完全不同的棋局。\n\n正是老顽童周伯通。\n\n他翻身落地，嘿嘿笑道：「小娃娃，你可知这世上有一门功夫，叫做左右互搏术？左手画圆，右手画方，两只手各干各的，互不相干！」\n\n说着左手打出一拳，右手却同时捏了个剑诀。他得意洋洋道：「\n一别心意两处分，\n左右逢源皆是春。\n世人皆道我痴颠，\n不知双绝化乾坤。\n\n这道理跟你们说的 zip 配对差不多——左手出招和右手出招配成一对，同时进行。不过顺序不重要，重要的是配对要完整！」\n\n黄蓉在旁翻了个白眼：「周大哥，你这比喻也太牵强了。」\n\n周伯通不以为意：「管他牵强不牵强，好用就行！你且来试试，能不能让两手招式配对出招？」",
+  "npc": "周伯通",
+  "template": "def simulate_dual_attack(left_moves, right_moves):\n    \"\"\"模拟左右互搏术\n    \n    将左右手的招式配对组合，按字典序排序后返回。\n    \n    Args:\n        left_moves: 左手招式列表\n        right_moves: 右手招式列表\n    \n    Returns:\n        排序后的招式组合列表，格式为「左手{左招}，右手{右招}」\n    \"\"\"\n    # TODO: 用 zip 配对，列表推导式生成字符串，排序后返回\n    pass\n\n\n# 测试代码（请勿修改）\nif __name__ == \"__main__\":\n    result = simulate_dual_attack(\n        ['降龙掌', '空明拳', '大伏魔拳'],\n        ['九阴白骨爪', '空明拳', '一阳指']\n    )\n    for line in result:\n        print(line)\n",
+  "tests": [
+    {
+      "input": "left_moves=['降龙掌', '空明拳', '大伏魔拳'], right_moves=['九阴白骨爪', '空明拳', '一阳指']",
+      "expected_output": "左手降龙掌，右手九阴白骨爪\n左手大伏魔拳，右手一阳指\n左手空明拳，右手空明拳",
+      "display": "基本配对：三招对三招"
+    },
+    {
+      "input": "left_moves=['拳', '掌', '指'], right_moves=['攻', '守']",
+      "expected_output": "左手拳，右手攻\n左手掌，右手守",
+      "display": "不等长配对：zip取较短"
+    },
+    {
+      "input": "left_moves=['天罡拳'], right_moves=['地煞腿']",
+      "expected_output": "左手天罡拳，右手地煞腿",
+      "display": "单招配对"
+    }
+  ],
+  "hint": "使用 zip() 将两个列表配对，用列表推导式生成格式字符串，最后用 sorted() 排序。注意 zip 会自动取较短列表的长度。",
+  "knowledge": "多线程基础",
+  "difficulty": 3,
+  "rewards": {
+    "exp": 200,
+    "silver": 80
+  }
+}

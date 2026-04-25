@@ -1,0 +1,19 @@
+{
+  "id": "advanced_007",
+  "title": "乾坤大挪移·第七层",
+  "description": "明教光明顶的密道中，你发现了乾坤大挪移的第七层心法。每一层都需要用递归来解密。\n\n请用递归实现函数 `decrypt(level: int) -> int`：\n- 如果 level 为 0，返回 1\n- 如果 level 为 1，返回 2\n- 否则返回 `3 * decrypt(level - 1) + decrypt(level - 2)`\n\n**示例：**\n```python\nprint(decrypt(0))  # 1\nprint(decrypt(1))  # 2\nprint(decrypt(2))  # 7  (=3*2+1)\nprint(decrypt(3))  # 23 (=3*7+2)\nprint(decrypt(5))  # 242\n```",
+  "story": "光明顶密道深处，墙壁上刻着密密麻麻的符文。\n\n张无忌看了一眼：「这是乾坤大挪移的加密心法，每一层都依赖前面两层的内容。」\n\n你仔细观察，发现规律：\n- 第零层：1\n- 第一层：2\n- 第n层：3×第(n-1)层 + 第(n-2)层\n\n张无忌点头：「没错，这就是递归——自己调用自己。解密第七层，你就掌握了乾坤大挪移的核心。」",
+  "npc": "张无忌",
+  "template": "def decrypt(level: int) -> int:\n    \"\"\"递归解密乾坤大挪移\n    \n    Args:\n        level: 密法层数 (>=0)\n    Returns:\n        解密后的数值\n    \"\"\"\n    # TODO: 实现递归\n    pass\n\n\nif __name__ == \"__main__\":\n    for i in range(6):\n        print(decrypt(i))\n",
+  "tests": [
+    {"input": "", "expected_output": "1", "display": "decrypt(0) = 1"},
+    {"input": "", "expected_output": "2", "display": "decrypt(1) = 2"},
+    {"input": "", "expected_output": "7", "display": "decrypt(2) = 7"},
+    {"input": "", "expected_output": "23", "display": "decrypt(3) = 23"},
+    {"input": "", "expected_output": "242", "display": "decrypt(5) = 242"}
+  ],
+  "hint": "递归需要两个要素：基准情况（level=0和level=1）和递推关系。注意 return 3 * decrypt(level-1) + decrypt(level-2)。",
+  "knowledge": "递归",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

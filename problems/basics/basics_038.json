@@ -1,0 +1,13 @@
+{
+  "id": "basics_038",
+  "title": "断臂求生·容错",
+  "description": "杨过被郭芙斩断右臂后，需要适应单手战斗。模拟他的容错机制：\n\n写函数 `safe_divide(a, b)`：\n- 如果b不为0，返回a/b的结果（保留2位小数）\n- 如果b为0，返回\"断臂亦能战！\"\n\n测试：\n```python\nprint(safe_divide(10, 3))  # 3.33\nprint(safe_divide(10, 0))  # 断臂亦能战！\n```",
+  "story": "杨过看着空荡荡的右袖，嘴角却微微上扬：\n\n「一只手怎么了？一只手照样写出好代码。」\n\n他用左手握住玄铁重剑，目光如炬。",
+  "npc": "杨过",
+  "template": "def safe_divide(a, b):\n    # TODO: 用try/except或if处理除零\n    pass\n\nprint(safe_divide(10, 3))\nprint(safe_divide(10, 0))\n",
+  "tests": [{"input": "", "expected_output": "3.33\n断臂亦能战！", "display": "容错机制测试"}],
+  "hint": "try: return round(a/b, 2) except ZeroDivisionError: return '断臂亦能战！'",
+  "knowledge": "异常处理",
+  "difficulty": 1,
+  "rewards": {"exp": 70, "silver": 30}
+}

@@ -1,0 +1,13 @@
+{
+  "id": "basics_039",
+  "title": "剑冢·四境界",
+  "description": "独孤求败剑冢中有四把剑，代表编程四境界：\n```python\nswords = [\n    {'name': '利剑', 'level': '基础语法', 'power': 30},\n    {'name': '软剑', 'level': '高级特性', 'power': 50},\n    {'name': '重剑', 'level': '设计思想', 'power': 80},\n    {'name': '木剑', 'level': '大道至简', 'power': 100},\n]\n```\n\n请输出第三把剑（重剑）的level。\n\n输出：`设计思想`",
+  "story": "杨过在荒谷中发现了独孤求败的剑冢。四把剑依次排列，从锋利到朴素。\n\n剑旁石碑刻着：「利剑无意，软剑无常，重剑无锋，木剑无滞。」\n\n杨过拿起重剑——大巧不工。",
+  "npc": "杨过",
+  "template": "swords = [\n    {'name': '利剑', 'level': '基础语法', 'power': 30},\n    {'name': '软剑', 'level': '高级特性', 'power': 50},\n    {'name': '重剑', 'level': '设计思想', 'power': 80},\n    {'name': '木剑', 'level': '大道至简', 'power': 100},\n]\n\n# 输出第三把剑的level\n",
+  "tests": [{"input": "", "expected_output": "设计思想", "display": "重剑境界"}],
+  "hint": "swords[2]['level'] 访问第三把剑的level字段",
+  "knowledge": "列表+字典",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

@@ -1,0 +1,13 @@
+{
+  "id": "advanced_018",
+  "title": "十六年·重逢",
+  "description": "杨过和小龙女重逢了！16年的数据需要序列化保存和恢复。\n\n请实现简单的JSON序列化/反序列化：\n```python\nimport json\n\ndata = {'name': '杨过', 'waited_years': 16, 'location': '绝情谷底', 'reunited': True}\n\n# 序列化为字符串\njson_str = json.dumps(data, ensure_ascii=False)\n\n# 反序列化\nrestored = json.loads(json_str)\n```\n\n输出 restored 的 'reunited' 值。\n\n输出：`True`",
+  "story": "十六年后，杨过终于等到了小龙女。\n\n断肠崖底，白衣飘飘的身影出现在眼前——\n\n「龙儿……」\n「过儿。」\n\n十六年的数据，全部保存完好。",
+  "npc": "杨过",
+  "template": "import json\n\ndata = {'name': '杨过', 'waited_years': 16, 'location': '绝情谷底', 'reunited': True}\n\n# TODO: 序列化+反序列化\n",
+  "tests": [{"input": "", "expected_output": "True", "display": "数据序列化恢复"}],
+  "hint": "json_str = json.dumps(data, ensure_ascii=False); restored = json.loads(json_str); print(restored['reunited'])",
+  "knowledge": "JSON序列化",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

@@ -1,0 +1,13 @@
+{
+  "id": "basics_041",
+  "title": "五轮齐出·金轮",
+  "description": "金轮法王有五个法轮：金、银、铜、铁、铅。\n\n```python\nwheels = ['金轮', '银轮', '铜轮', '铁轮', '铅轮']\n```\n\n请用for循环，对每个法轮输出 `「{轮名}出击！」`，共5行。",
+  "story": "金轮法王双手一展，五个法轮同时飞出！\n\n「五轮齐出，天下谁能挡我！」\n\n杨过握紧玄铁重剑，一一迎战。",
+  "npc": "金轮法王",
+  "template": "wheels = ['金轮', '银轮', '铜轮', '铁轮', '铅轮']\n\n# TODO: for循环输出每个轮出击\n",
+  "tests": [{"input": "", "expected_output": "「金轮出击！」\n「银轮出击！」\n「铜轮出击！」\n「铁轮出击！」\n「铅轮出击！」", "display": "五轮齐出"}],
+  "hint": "for w in wheels: print(f'「{w}出击！」')",
+  "knowledge": "for循环",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

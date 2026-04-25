@@ -1,0 +1,17 @@
+{
+  "id": "advanced_005",
+  "title": "奇门遁甲·阵法",
+  "description": "桃花岛的奇门遁甲阵法，本质上是一个栈（Stack）操作序列。\n\n请实现一个 `MazeStack` 类，模拟在迷宫中的行进：\n- `push(direction)` — 走入一个方向，加入路径栈\n- `backtrack()` — 回退一步（弹出栈顶），当走入死路时使用\n- `get_path()` — 返回当前完整路径字符串，用\"->\"连接\n\n**示例：**\n```python\nmaze = MazeStack()\nmaze.push('东')\nmaze.push('南')\nmaze.push('东')\nprint(maze.get_path())  # 东->南->东\nmaze.backtrack()\nprint(maze.get_path())  # 东->南\nmaze.push('北')\nprint(maze.get_path())  # 东->南->北\n```",
+  "story": "黄药师冷冷地看着你：「桃花岛阵法，外人入则迷，唯知栈理者可出。」\n\n他挥手间，四周桃林移动，你已经身处迷宫之中。\n\n黄蓉的声音从远处传来：「栈！记住栈！走入死路就回退，每次选对方向就压栈。这就是破解之法！」\n\n你深吸一口气，开始用编程之道破解奇门遁甲。",
+  "npc": "黄药师",
+  "template": "class MazeStack:\n    \"\"\"迷宫路径栈\"\"\"\n    def __init__(self):\n        # TODO: 初始化栈\n        pass\n    \n    def push(self, direction: str):\n        \"\"\"走入一个方向\"\"\"\n        # TODO\n        pass\n    \n    def backtrack(self):\n        \"\"\"回退一步\"\"\"\n        # TODO\n        pass\n    \n    def get_path(self) -> str:\n        \"\"\"返回当前路径，用->连接\"\"\"\n        # TODO\n        pass\n\n\nif __name__ == \"__main__\":\n    maze = MazeStack()\n    maze.push('东')\n    maze.push('南')\n    maze.push('东')\n    print(maze.get_path())\n    maze.backtrack()\n    print(maze.get_path())\n    maze.push('北')\n    print(maze.get_path())\n",
+  "tests": [
+    {"input": "", "expected_output": "东->南->东\n东->南\n东->南->北", "display": "基本push/backtrack/get_path操作"},
+    {"input": "", "expected_output": "北->西->南->东", "display": "四方向路径"},
+    {"input": "", "expected_output": "", "display": "空栈返回空字符串"}
+  ],
+  "hint": "用列表实现栈。push用append，backtrack用pop。get_path用'->'.join()连接。",
+  "knowledge": "数据结构",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

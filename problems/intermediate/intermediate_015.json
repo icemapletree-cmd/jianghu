@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_015",
+  "title": "珍珑棋局·劫争",
+  "description": "珍珑棋局中，黑子被围困。设黑子有n口气，每一步对方堵1口气，但你可以提2口气（如果选择正确）。\n\n写递归函数 `liberties(n)`：\n- n<=0: 返回 0\n- n==1: 返回 1（只剩1口，无法提）\n- 否则: 返回 1 + liberties(n - 1 + 2) = 1 + liberties(n+1)\n\n等等，这样会无限递归。修改规则：\n- n<=0: 返回 0\n- 否则: 返回 1 + liberties(n-2)（每步净消耗2口气）\n\n计算 liberties(10)\n\n输出：`6`",
+  "story": "无崖子摆下珍珑棋局，虚竹坐在棋盘前冥思苦想。\n\n你观察棋局，发现黑子有10口气。每一步消耗2口气，问一共能走多少步？",
+  "npc": "虚竹",
+  "template": "def liberties(n):\n    \"\"\"递归计算能走的步数\"\"\"\n    # TODO\n    pass\n\nprint(liberties(10))\n",
+  "tests": [{"input": "", "expected_output": "6", "display": "liberties(10)=6"}],
+  "hint": "if n <= 0: return 0; else: return 1 + liberties(n-2)",
+  "knowledge": "递归基础",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

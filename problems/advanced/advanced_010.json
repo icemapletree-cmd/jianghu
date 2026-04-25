@@ -1,0 +1,13 @@
+{
+  "id": "advanced_010",
+  "title": "皇宫密道·寻路",
+  "description": "皇宫密道可以用图来表示。用BFS找到从起点到终点的最短路径长度。\n\n图用邻接表表示：\n```python\ngraph = {\n    '入口': ['岔路A', '岔路B'],\n    '岔路A': ['岔路C'],\n    '岔路B': ['岔路C', '死路'],\n    '岔路C': ['宝库'],\n    '死路': [],\n    '宝库': []\n}\n```\n\n从'入口'到'宝库'的最短路径经过几个节点（含起终点）？\n\n输出：`4`（入口→岔路B→岔路C→宝库 或 入口→岔路A→岔路C→宝库）",
+  "story": "韦小宝带你进入皇宫密道：「嘿，这里面岔路多得很！我上次差点迷路！」\n\n你拿出纸笔，用BFS算法找出最短路径。",
+  "npc": "韦小宝",
+  "template": "from collections import deque\n\ngraph = {\n    '入口': ['岔路A', '岔路B'],\n    '岔路A': ['岔路C'],\n    '岔路B': ['岔路C', '死路'],\n    '岔路C': ['宝库'],\n    '死路': [],\n    '宝库': []\n}\n\ndef bfs_shortest(graph, start, end):\n    \"\"\"BFS找最短路径长度\"\"\"\n    # TODO\n    pass\n\nprint(bfs_shortest(graph, '入口', '宝库'))\n",
+  "tests": [{"input": "", "expected_output": "4", "display": "BFS最短路径=4"}],
+  "hint": "用deque做BFS，记录每个节点的距离。queue中存(node, distance)，遇到end就返回distance",
+  "knowledge": "BFS图算法",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

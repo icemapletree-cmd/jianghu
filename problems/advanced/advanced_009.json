@@ -1,0 +1,13 @@
+{
+  "id": "advanced_009",
+  "title": "葵花宝典·并行",
+  "description": "东方不败可以同时发动多个攻击。请模拟并行任务：\n\n定义函数 `parallel_attacks(attack_list: list) -> list`：\n- attack_list 是多个函数的列表\n- 按顺序执行每个函数，收集返回值\n- 返回所有结果的列表\n\n这不是真正的多线程，而是用高阶函数模拟：\n```python\ndef parallel_attacks(attack_list):\n    return [atk() for atk in attack_list]\n```\n\n测试：\n```python\ndef a1(): return '掌'\ndef a2(): return '剑'\ndef a3(): return '指'\nprint(parallel_attacks([a1, a2, a3]))\n```\n\n输出：`['掌', '剑', '指']`",
+  "story": "东方不败的葵花宝典号称可以同时发出多种攻击——虽然实际是高速切换，但效果如同并行。",
+  "npc": "东方不败",
+  "template": "def parallel_attacks(attack_list):\n    \"\"\"模拟并行攻击\"\"\"\n    # TODO\n    pass\n\ndef a1(): return '掌'\ndef a2(): return '剑'\ndef a3(): return '指'\n\nprint(parallel_attacks([a1, a2, a3]))\n",
+  "tests": [{"input": "", "expected_output": "['掌', '剑', '指']", "display": "并行攻击模拟"}],
+  "hint": "return [atk() for atk in attack_list]",
+  "knowledge": "高阶函数",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

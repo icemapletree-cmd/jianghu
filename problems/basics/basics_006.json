@@ -1,0 +1,37 @@
+{
+  "id": "basics_006",
+  "title": "临敌判断·if心法",
+  "description": "黑衣人追来了！你必须判断他的招式再应对：\n\n如果 action 是 \"拳\"，输出 \"格挡\"\n如果 action 是 \"腿\"，输出 \"闪避\"\n如果 action 是 \"暗器\"，输出 \"拨打\"\n其他情况输出 \"以不变应万变\"",
+  "story": "黑衣人追到破庙，你临危不惧，用if判断应对。",
+  "npc": "黑衣人",
+  "template": "def respond(action):\n    # 根据 action 返回应对方式\n    pass\n\n# 读取输入并输出结果\naction = input()\nprint(respond(action))\n",
+  "tests": [
+    {
+      "input": "拳",
+      "expected_output": "格挡",
+      "display": "拳→格挡"
+    },
+    {
+      "input": "腿",
+      "expected_output": "闪避",
+      "display": "腿→闪避"
+    },
+    {
+      "input": "暗器",
+      "expected_output": "拨打",
+      "display": "暗器→拨打"
+    },
+    {
+      "input": "剑",
+      "expected_output": "以不变应万变",
+      "display": "其他→以不变应万变"
+    }
+  ],
+  "hint": "用 if/elif/else 判断 action 的值",
+  "knowledge": "if/else",
+  "difficulty": 1,
+  "rewards": {
+    "exp": 80,
+    "silver": 30
+  }
+}

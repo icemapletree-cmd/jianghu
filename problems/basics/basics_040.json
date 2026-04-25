@@ -1,0 +1,13 @@
+{
+  "id": "basics_040",
+  "title": "小东邪·降生",
+  "description": "郭襄出生了！请创建一个 `Person` 类：\n- `__init__(self, name, personality)` 初始化名字和性格\n- `introduce(self)` 返回 `\"我叫{name}，性格{personality}\"`\n\n测试：\n```python\nbaby = Person('郭襄', '天真烂漫')\nprint(baby.introduce())\n```",
+  "story": "襄阳城内，黄蓉生下了一个女婴。郭靖手足无措：「这孩子……叫什么好？」\n\n黄蓉笑道：「叫郭襄吧。你看她那双眼睛，多灵动。」\n\n小郭襄哇哇大哭，仿佛在说：「快给我创建一个对象！」",
+  "npc": "黄蓉",
+  "template": "class Person:\n    def __init__(self, name, personality):\n        # TODO\n        pass\n    \n    def introduce(self):\n        # TODO\n        pass\n\nbaby = Person('郭襄', '天真烂漫')\nprint(baby.introduce())\n",
+  "tests": [{"input": "", "expected_output": "我叫郭襄，性格天真烂漫", "display": "郭襄自我介绍"}],
+  "hint": "__init__中self.name=name, self.personality=personality。introduce中return f'我叫{self.name}，性格{self.personality}'",
+  "knowledge": "类与__init__",
+  "difficulty": 1,
+  "rewards": {"exp": 70, "silver": 30}
+}

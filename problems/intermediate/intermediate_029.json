@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_029",
+  "title": "六大派围攻·观察者",
+  "description": "六大派围攻光明顶！使用观察者模式——当明教发出警报时，所有门派收到通知。\n\n```python\nclass Alarm:\n    def __init__(self):\n        self.listeners = []\n    def subscribe(self, name):\n        self.listeners.append(name)\n    def notify(self, msg):\n        return [f'{name}收到：{msg}' for name in self.listeners]\n```\n\n创建Alarm，subscribe三个门派，notify('明教有难')，输出列表。\n\n输出：`['少林收到：明教有难', '武当收到：明教有难', '峨眉收到：明教有难']`",
+  "story": "光明顶上，六大派围攻！明教发出警报——观察者模式，一呼百应。",
+  "npc": "张无忌",
+  "template": "class Alarm:\n    def __init__(self):\n        self.listeners = []\n    def subscribe(self, name):\n        # TODO\n        pass\n    def notify(self, msg):\n        # TODO\n        pass\n\na = Alarm()\na.subscribe('少林')\na.subscribe('武当')\na.subscribe('峨眉')\nprint(a.notify('明教有难'))\n",
+  "tests": [{"input": "", "expected_output": "['少林收到：明教有难', '武当收到：明教有难', '峨眉收到：明教有难']", "display": "观察者模式"}],
+  "hint": "subscribe用append，notify用列表推导式",
+  "knowledge": "观察者模式",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

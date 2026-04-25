@@ -1,0 +1,22 @@
+{
+  "id": "basics_012",
+  "title": "f-string内功·格式化输出",
+  "description": "你遇到一位老者，他说：\n\n「年轻人，内功之道在于'格式'。\n  将以下信息格式化输出：\n  姓名：张无忌，门派：武当，等级：三流高手」\n\n变量已定义好，用 f-string 格式化输出。\n输出：张无忌，武当派，三流高手",
+  "story": "老者教你内功格式化的秘诀——f-string。",
+  "npc": "老者",
+  "template": "name = \"张无忌\"\nfaction = \"武当派\"\nlevel = \"三流高手\"\n# 用 f-string 输出：张无忌，武当派，三流高手\n",
+  "tests": [
+    {
+      "input": "",
+      "expected_output": "张无忌，武当派，三流高手",
+      "display": "格式化输出角色信息"
+    }
+  ],
+  "hint": "print(f\"{name}，{faction}，{level}\")",
+  "knowledge": "f-string",
+  "difficulty": 1,
+  "rewards": {
+    "exp": 50,
+    "silver": 20
+  }
+}

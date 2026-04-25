@@ -1,0 +1,18 @@
+{
+  "id": "intermediate_007",
+  "title": "北冥神功·吸纳术",
+  "description": "段誉在无量山洞中悟出北冥神功，能够吸纳天下各家武学。你需要从 Python 标准库中吸纳数学模块的力量。\n\n**要求：**\n- 定义函数 `calc_distance(x1, y1, x2, y2)`\n- 计算二维平面上两点 `(x1, y1)` 和 `(x2, y2)` 之间的距离\n- 距离公式：$\\sqrt{(x2-x1)^2 + (y2-y1)^2}$\n- 必须 `import math`，使用 `math.sqrt()` 计算平方根\n- 结果保留 2 位小数（用 `round` 函数）并返回\n\n**示例：**\n```python\nprint(calc_distance(0, 0, 3, 4))    # 输出：5.0\nprint(calc_distance(1, 1, 4, 5))    # 输出：5.0\nprint(calc_distance(0, 0, 1, 1))    # 输出：1.41\n```",
+  "story": "无量山剑湖之畔，段誉正盘坐于一块巨石之上，周身隐隐有真气流转。他睁开眼，对你微微一笑。\n\n「我这北冥神功，能吸纳天下内力为己用。Python 世界中也有类似功夫——叫做 import（导入）。天下高手将各自的绝学封装在『模块』之中，你只需 import，便能将那些力量吸纳过来。」\n\n他指向远方：「比如 math 模块，其中蕴含着无穷的数学之力。你用它来计算两个地点之间的距离——这在江湖上判断轻功飞行距离时必不可少。」",
+  "npc": "段誉",
+  "template": "# 导入 math 模块\n# 定义函数 calc_distance(x1, y1, x2, y2)\n# 计算两点间距离，保留2位小数\n\nimport math\n\ndef calc_distance(x1, y1, x2, y2):\n    # 用 math.sqrt 计算距离\n    # round 保留2位小数\n    pass\n",
+  "tests": [
+    {"input": "calc_distance(0, 0, 3, 4)", "expected_output": "5.0", "display": "计算经典勾股距离"},
+    {"input": "calc_distance(1, 1, 4, 5)", "expected_output": "5.0", "display": "计算一般两点距离"},
+    {"input": "calc_distance(0, 0, 1, 1)", "expected_output": "1.41", "display": "计算对角线距离"},
+    {"input": "calc_distance(0, 0, 0, 0)", "expected_output": "0.0", "display": "同一点距离为0"}
+  ],
+  "hint": "先 import math，然后用 math.sqrt((x2-x1)**2 + (y2-y1)**2) 计算距离，最后 round(结果, 2) 保留两位小数。",
+  "knowledge": "模块导入",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

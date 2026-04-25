@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_024",
+  "title": "武林志·门派功法",
+  "description": "请创建一个 `MartialArtSystem` 类，管理门派武功：\n\n```python\nclass MartialArtSystem:\n    def __init__(self):\n        self.arts = {}  # {武功名: {'faction': 门派, 'power': 威力}}\n    \n    def add_art(self, name, faction, power):\n        # 添加武功\n        pass\n    \n    def get_by_faction(self, faction):\n        # 返回该门派所有武功名列表\n        pass\n    \n    def get_strongest(self, n=3):\n        # 返回威力最高的n个武功名列表\n        pass\n```\n\n测试代码：\n```python\nsys = MartialArtSystem()\nsys.add_art('降龙掌', '丐帮', 95)\nsys.add_art('打狗棒法', '丐帮', 80)\nsys.add_art('太极拳', '武当', 88)\nsys.add_art('独孤九剑', '华山', 92)\nprint(sys.get_by_faction('丐帮'))\nprint(sys.get_strongest(2))\n```\n\n输出两行：\n```\n['降龙掌', '打狗棒法']\n['降龙掌', '独孤九剑']\n```",
+  "story": "你将各门派的武功整理成册，需要一个管理系统来查询和排名。\n\n黄蓉看了眼你的设计：「嗯，class + dict + sorted，基础扎实。不错不错！」",
+  "npc": "黄蓉",
+  "template": "class MartialArtSystem:\n    def __init__(self):\n        self.arts = {}\n    \n    def add_art(self, name, faction, power):\n        # TODO\n        pass\n    \n    def get_by_faction(self, faction):\n        # TODO\n        pass\n    \n    def get_strongest(self, n=3):\n        # TODO\n        pass\n\nsys = MartialArtSystem()\nsys.add_art('降龙掌', '丐帮', 95)\nsys.add_art('打狗棒法', '丐帮', 80)\nsys.add_art('太极拳', '武当', 88)\nsys.add_art('独孤九剑', '华山', 92)\nprint(sys.get_by_faction('丐帮'))\nprint(sys.get_strongest(2))\n",
+  "tests": [{"input": "", "expected_output": "['降龙掌', '打狗棒法']\n['降龙掌', '独孤九剑']", "display": "门派功法系统测试"}],
+  "hint": "get_by_faction用列表推导式，get_strongest用sorted(arts.items(), key=lambda x: x[1]['power'], reverse=True)[:n]",
+  "knowledge": "综合class项目",
+  "difficulty": 2,
+  "rewards": {"exp": 150, "silver": 60}
+}

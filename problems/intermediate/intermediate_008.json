@@ -1,0 +1,18 @@
+{
+  "id": "intermediate_008",
+  "title": "太极拳·万物归一",
+  "description": "张三丰在武当山上传授太极拳的核心理念——万物归一。他要求你创建一个「侠客」类，将侠客的属性和行为封装在一起。\n\n**要求：**\n- 定义类 `Swordsman`\n- `__init__` 方法接收 `name` 和 `skill` 两个参数，分别赋值给 `self.name` 和 `self.skill`\n- 定义方法 `introduce(self)`，返回字符串 `\"我叫{self.name}，擅长{self.skill}\"`\n- 定义方法 `attack(self)`，返回字符串 `\"{self.name}使出了{self.skill}！\"`\n\n**示例：**\n```python\ns = Swordsman(\"张无忌\", \"乾坤大挪移\")\nprint(s.introduce())  # 输出：我叫张无忌，擅长乾坤大挪移\nprint(s.attack())     # 输出：张无忌使出了乾坤大挪移！\n\nt = Swordsman(\"令狐冲\", \"独孤九剑\")\nprint(t.introduce())  # 输出：我叫令狐冲，擅长独孤九剑\n```",
+  "story": "武当山金顶之上，张三丰鹤发童颜，正在向一群弟子讲授太极拳的要义。\n\n「太极者，阴阳相生，万物归一。武功之道亦是如此——将相关的属性和招式封装在一起，便成一个整体。这就是所谓的『类』。」\n\n他随手一挥，一道太极图在空中浮现：「你且创建一个侠客类。每个侠客有名字、有绝技，能自报家门，也能出手攻击。这便是面向对象的第一步。」",
+  "npc": "张三丰",
+  "template": "# 定义 Swordsman 类\n\nclass Swordsman:\n    def __init__(self, name, skill):\n        # 初始化 name 和 skill 属性\n        pass\n    \n    def introduce(self):\n        # 返回 \"我叫{name}，擅长{skill}\"\n        pass\n    \n    def attack(self):\n        # 返回 \"{name}使出了{skill}！\"\n        pass\n",
+  "tests": [
+    {"input": "s = Swordsman(\"张无忌\", \"乾坤大挪移\"); s.introduce()", "expected_output": "我叫张无忌，擅长乾坤大挪移", "display": "张无忌自报家门"},
+    {"input": "s = Swordsman(\"张无忌\", \"乾坤大挪移\"); s.attack()", "expected_output": "张无忌使出了乾坤大挪移！", "display": "张无忌发动攻击"},
+    {"input": "Swordsman(\"令狐冲\", \"独孤九剑\").introduce()", "expected_output": "我叫令狐冲，擅长独孤九剑", "display": "令狐冲自报家门"},
+    {"input": "Swordsman(\"乔峰\", \"降龙十八掌\").attack()", "expected_output": "乔峰使出了降龙十八掌！", "display": "乔峰发动攻击"}
+  ],
+  "hint": "class 定义类，__init__ 是初始化方法，用 self.xxx 保存属性。方法第一个参数都是 self，代表实例本身。",
+  "knowledge": "类与对象",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

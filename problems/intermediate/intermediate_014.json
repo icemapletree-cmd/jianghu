@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_014",
+  "title": "六脉神剑·连招",
+  "description": "段誉要组合六脉神剑的招式。请写一个函数：\n\n`sword_combo(fingers: list) -> str`\n\n接收手指编号列表，返回对应剑法名用\"->\"连接的字符串。\n\n示例：`sword_combo([1, 3, 6])` 返回 `\"少商剑->中冲剑->少泽剑\"`\n\n剑法映射：{1:'少商剑', 2:'商阳剑', 3:'中冲剑', 4:'关冲剑', 5:'少冲剑', 6:'少泽剑'}",
+  "story": "段誉终于记住了六根手指对应的剑法：「大拇指少商、食指商阳……等等，让我连起来试试！」\n\n他笨拙地按1-3-6的顺序出剑，居然像模像样。",
+  "npc": "段誉",
+  "template": "def sword_combo(fingers):\n    \"\"\"将手指编号列表转为剑法连招字符串\"\"\"\n    names = {1:'少商剑', 2:'商阳剑', 3:'中冲剑', \n             4:'关冲剑', 5:'少冲剑', 6:'少泽剑'}\n    # TODO\n    pass\n\nprint(sword_combo([1, 3, 6]))\n",
+  "tests": [{"input": "", "expected_output": "少商剑->中冲剑->少泽剑", "display": "1-3-6连招"}],
+  "hint": "用列表推导式 [names[f] for f in fingers]，然后用 '->'.join() 连接",
+  "knowledge": "函数+列表推导",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

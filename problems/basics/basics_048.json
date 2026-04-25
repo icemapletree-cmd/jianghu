@@ -1,0 +1,13 @@
+{
+  "id": "basics_048",
+  "title": "刀剑秘密·编码",
+  "description": "屠龙刀和倚天剑中藏有秘密。秘密用反转字符串加密了：\n```\nsecret = 'TAIGNEZIFITLUAF'\n```\n\n请反转这个字符串并输出。\n\n输出：`FAILUTIFIZEINGIAT`\n\n等等，不对——试试反转 `'NOITUAC'`：\n\n输出：`CAUTION`",
+  "story": "屠龙刀中藏着兵法，倚天剑中藏着武功秘籍。但秘密被加密了——需要反转才能看到真面目。\n\n谢逊摸着屠龙刀：「刀中藏有秘密……但我看不到。」",
+  "npc": "谢逊",
+  "template": "secret = 'NOITUAC'\n\n# TODO: 反转字符串\nprint(???)\n",
+  "tests": [{"input": "", "expected_output": "CAUTION", "display": "反转解密"}],
+  "hint": "secret[::-1] 可以反转字符串",
+  "knowledge": "字符串切片反转",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

@@ -1,0 +1,18 @@
+{
+  "id": "intermediate_011",
+  "title": "凌波微步·阵法",
+  "description": "逍遥派的凌波微步有各种步法阵型。你需要用类方法来创建不同的步法实例，实现工厂模式。\n\n**要求：**\n- 定义类 `Footwork`（步法）\n- `__init__` 方法接收 `name`（步法名）和 `directions`（方向列表，如 `[\"北\", \"东北\"]`）\n- 定义类方法 `@classmethod def triangle(cls)`：创建一个三角步法，名字为 `\"三角步\"`，方向为 `[\"前\", \"左后\", \"右后\"]`\n- 定义类方法 `@classmethod def diamond(cls)`：创建一个菱形步法，名字为 `\"菱形步\"`，方向为 `[\"前\", \"右\", \"后\", \"左\"]`\n- 定义实例方法 `perform(self)`：返回字符串 `\"{self.name}：\" + \"→\".join(self.directions)`\n\n**示例：**\n```python\nt = Footwork.triangle()\nprint(t.perform())  # 输出：三角步：前→左后→右后\n\nd = Footwork.diamond()\nprint(d.perform())  # 输出：菱形步：前→右→后→左\n```",
+  "story": "灵鹫宫后山的一片空地上，虚竹正在练习凌波微步的各种步法阵型。他的脚步纷繁复杂，却又暗含规律。\n\n「凌波微步按六十四卦方位变化，但初学者可以从简单的阵型开始。」他停下脚步，比划了两个图形，「比如三角步和菱形步，是最基本的两种阵型。」\n\n他微微一笑：「用类方法来创建这些步法实例，便如布阵一般——不需要知道内部构造细节，只需调用类方法，便能自动生成对应的阵法。这种功夫叫做『工厂方法』。」",
+  "npc": "虚竹",
+  "template": "# 定义 Footwork 类\n\nclass Footwork:\n    def __init__(self, name, directions):\n        # 初始化 name 和 directions\n        pass\n    \n    @classmethod\n    def triangle(cls):\n        # 创建三角步法\n        pass\n    \n    @classmethod\n    def diamond(cls):\n        # 创建菱形步法\n        pass\n    \n    def perform(self):\n        # 返回步法执行字符串\n        pass\n",
+  "tests": [
+    {"input": "Footwork.triangle().perform()", "expected_output": "三角步：前→左后→右后", "display": "三角步法表演"},
+    {"input": "Footwork.diamond().perform()", "expected_output": "菱形步：前→右→后→左", "display": "菱形步法表演"},
+    {"input": "Footwork(\"八卦步\", [\"乾\", \"坤\", \"震\", \"巽\"]).perform()", "expected_output": "八卦步：乾→坤→震→巽", "display": "自定义步法"},
+    {"input": "isinstance(Footwork.triangle(), Footwork)", "expected_output": "True", "display": "类方法创建的是正确实例"}
+  ],
+  "hint": "类方法用 @classmethod 装饰器，第一个参数是 cls（类本身）。在方法内用 cls(...) 创建并返回实例。",
+  "knowledge": "类方法与静态方法",
+  "difficulty": 2,
+  "rewards": {"exp": 100, "silver": 40}
+}

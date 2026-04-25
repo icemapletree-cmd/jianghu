@@ -1,0 +1,13 @@
+{
+  "id": "basics_046",
+  "title": "四女·抉择",
+  "description": "张无忌在赵敏、周芷若、小昭、殷离之间犹豫不决。请帮他统计每个人的人气：\n```python\nvotes = {'赵敏': 5, '周芷若': 3, '小昭': 4, '殷离': 2}\n```\n\n输出人气最高的人名。\n\n输出：`赵敏`",
+  "story": "张无忌挠着头：「赵敏聪明，芷若温柔，小昭可爱，殷离痴情……我到底该选谁？」\n\n韦小宝在一旁偷笑：「嘿嘿，一个都不放过，这才是正道！」\n\n杨过翻了个白眼：「……」",
+  "npc": "张无忌",
+  "template": "votes = {'赵敏': 5, '周芷若': 3, '小昭': 4, '殷离': 2}\n\n# TODO: 找出人气最高的\n",
+  "tests": [{"input": "", "expected_output": "赵敏", "display": "人气最高者"}],
+  "hint": "用 max(votes, key=votes.get)",
+  "knowledge": "字典max",
+  "difficulty": 1,
+  "rewards": {"exp": 60, "silver": 25}
+}

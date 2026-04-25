@@ -1,0 +1,32 @@
+{
+  "id": "advanced_002",
+  "title": "龟息大法·闭关",
+  "description": "修炼龟息大法需要在入定与出定之间自动管理内息状态。\n\n请编写一个**上下文管理器类** `CultivationSession`，实现 `__enter__` 和 `__exit__` 方法，使得使用 `with` 语句时能自动打印进入和退出修炼状态的信息。\n\n要求：\n1. 类名必须为 `CultivationSession`\n2. 构造函数 `__init__(self, name)` 接收一个修炼者名字\n3. `__enter__` 方法打印 `「{name}开始闭关修炼，气沉丹田...」` 并返回 self\n4. `__exit__` 方法打印 `「{name}结束修炼，真气归元。」`\n5. `__exit__` 的三个异常参数为 `exc_type, exc_val, exc_tb`，需接收但不做特殊处理\n\n**示例：**\n```python\nwith CultivationSession(\"令狐冲\"):\n    print(\"修炼中...\")\n```\n输出应为：\n```\n令狐冲开始闭关修炼，气沉丹田...\n修炼中...\n令狐冲结束修炼，真气归元。\n```\n\n```python\nwith CultivationSession(\"张无忌\"):\n    print(\"运功疗伤\")\n    print(\"打通任督二脉\")\n```\n输出应为：\n```\n张无忌开始闭关修炼，气沉丹田...\n运功疗伤\n打通任督二脉\n张无忌结束修炼，真气归元。\n```",
+  "story": "华山之巅，云雾缭绕。一间石室中，烛火摇曳，一位白发老者盘膝而坐。\n\n老者缓缓睁眼，正是华山派宿老——风清扬。他看了你一眼，淡淡道：「龟息大法，非是龟息，乃是心息。入定时万念俱寂，出定时天地清明。这其中的关键，在于——无论修炼中发生何事，出定之刻，气息必归本源。」\n\n他抬手在空中写了一个「with」字，说道：「\n闭关有道法自然，\n入定出定皆须全。\n莫待走火入魔时，\n方悔未曾护心关。\n\n上下文管理器便是你的护心关隘。__enter__ 是入定，__exit__ 是出定。无论中间发生什么，__exit__ 必会被调用。这便是武学中'有始有终'的道理。」",
+  "npc": "风清扬",
+  "template": "class CultivationSession:\n    \"\"\"修炼闭关的上下文管理器\n    \n    使用 with 语句自动管理修炼的进入和退出状态。\n    \"\"\"\n    \n    def __init__(self, name):\n        \"\"\"初始化修炼者名字\n        \n        Args:\n            name: 修炼者姓名\n        \"\"\"\n        # TODO: 保存修炼者名字\n        pass\n    \n    def __enter__(self):\n        \"\"\"进入修炼状态\"\"\"\n        # TODO: 打印开始修炼信息，返回 self\n        pass\n    \n    def __exit__(self, exc_type, exc_val, exc_tb):\n        \"\"\"退出修炼状态\"\"\"\n        # TODO: 打印结束修炼信息\n        pass\n\n\n# 测试代码（请勿修改）\nif __name__ == \"__main__\":\n    with CultivationSession(\"令狐冲\"):\n        print(\"修炼中...\")\n",
+  "tests": [
+    {
+      "input": "with CultivationSession(\"令狐冲\"):\n    print(\"修炼中...\")",
+      "expected_output": "令狐冲开始闭关修炼，气沉丹田...\n修炼中...\n令狐冲结束修炼，真气归元。",
+      "display": "基本用法：令狐冲闭关修炼"
+    },
+    {
+      "input": "with CultivationSession(\"张无忌\"):\n    print(\"运功疗伤\")\n    print(\"打通任督二脉\")",
+      "expected_output": "张无忌开始闭关修炼，气沉丹田...\n运功疗伤\n打通任督二脉\n张无忌结束修炼，真气归元。",
+      "display": "多次操作：张无忌疗伤"
+    },
+    {
+      "input": "with CultivationSession(\"郭靖\"):\n    pass",
+      "expected_output": "郭靖开始闭关修炼，气沉丹田...\n郭靖结束修炼，真气归元。",
+      "display": "空修炼：郭靖直接出关"
+    }
+  ],
+  "hint": "上下文管理器需要实现 __enter__ 和 __exit__ 两个魔术方法。__enter__ 在 with 块开始时调用，__exit__ 在 with 块结束时（无论是否异常）调用。记得 __enter__ 要返回 self。",
+  "knowledge": "上下文管理器",
+  "difficulty": 3,
+  "rewards": {
+    "exp": 200,
+    "silver": 80
+  }
+}

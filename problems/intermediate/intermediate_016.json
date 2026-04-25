@@ -1,0 +1,13 @@
+{
+  "id": "intermediate_016",
+  "title": "日月密探·暗号",
+  "description": "你需要潜入日月神教，使用暗号系统。请写一个闭包函数：\n\n`make_spy(code_name)` 返回一个函数，该函数接收消息，返回 `\"[{code_name}] {消息}\"` 的格式。\n\n示例：\n```python\nspy = make_spy(\"黑木崖\")\nprint(spy(\"教主有令\"))  # [黑木崖] 教主有令\n```",
+  "story": "任我行让你潜入日月神教做卧底。他递给你一块令牌：「用这个暗号，任何消息都加上你的代号。」\n\n你接过令牌，上面刻着「黑木崖」三个字。",
+  "npc": "任我行",
+  "template": "def make_spy(code_name):\n    \"\"\"创建一个暗号函数\"\"\"\n    # TODO: 返回一个闭包函数\n    pass\n\nspy = make_spy(\"黑木崖\")\nprint(spy(\"教主有令\"))\n",
+  "tests": [{"input": "", "expected_output": "[黑木崖] 教主有令", "display": "暗号消息"}],
+  "hint": "def make_spy(code_name): 内部定义 def send(msg): return f'[{code_name}] {msg}'; return send",
+  "knowledge": "闭包",
+  "difficulty": 2,
+  "rewards": {"exp": 120, "silver": 50}
+}

@@ -1,0 +1,13 @@
+{
+  "id": "advanced_012",
+  "title": "海战布阵·坐标",
+  "description": "海战需要在10x10的网格上布置战船。请实现一个 `BattleGrid` 类：\n\n```python\nclass BattleGrid:\n    def __init__(self, size=10):\n        # 初始化size x size的网格（全0）\n        pass\n    \n    def place_ship(self, x, y, length, direction):\n        # direction: 'H'水平 'V'垂直\n        # 在网格上放置战船（用1表示）\n        pass\n    \n    def display(self):\n        # 返回网格的字符串表示，每行用空格分隔\n        pass\n```\n\n测试：\n```python\ngrid = BattleGrid(5)\ngrid.place_ship(0, 0, 3, 'H')  # 在(0,0)水平放3格船\nprint(grid.display())\n```\n\n输出（5x5网格，第一行前3格为1）：\n```\n1 1 1 0 0\n0 0 0 0 0\n0 0 0 0 0\n0 0 0 0 0\n0 0 0 0 0\n```",
+  "story": "韦小宝指着海图：「大侠，帮我排兵布阵！海战全靠你的策略了！」\n\n你在海图上标出战船位置，准备迎敌。",
+  "npc": "韦小宝",
+  "template": "class BattleGrid:\n    def __init__(self, size=10):\n        # TODO: 创建 size x size 的二维列表\n        pass\n    \n    def place_ship(self, x, y, length, direction):\n        # TODO: 放置战船\n        pass\n    \n    def display(self):\n        # TODO: 返回字符串\n        pass\n\ngrid = BattleGrid(5)\ngrid.place_ship(0, 0, 3, 'H')\nprint(grid.display())\n",
+  "tests": [{"input": "", "expected_output": "1 1 1 0 0\n0 0 0 0 0\n0 0 0 0 0\n0 0 0 0 0\n0 0 0 0 0", "display": "海战布阵"}],
+  "hint": "__init__用[[0]*size for _ in range(size)]。place_ship水平时grid[y][x+i]=1，垂直时grid[y+i][x]=1",
+  "knowledge": "二维数组",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}

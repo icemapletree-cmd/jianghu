@@ -1,0 +1,13 @@
+{
+  "id": "basics_030",
+  "title": "黑风追杀·逃命",
+  "description": "你距离黑风双煞100步。你每步跑3步，他们每步追2步。\n\n用while循环模拟逃跑过程：当你的距离 > 0 时继续跑，每轮距离减少(3-2)=1步。\n输出总共跑了几轮才被追上（距离<=0）。\n\n答案：100轮",
+  "story": "梅超风的笑声在身后回荡：「嘿嘿嘿……跑不掉的……」\n\n你拼命地跑！每步前进3步，但梅超风每步追近2步。距离在一点点缩短……\n\n「用while循环！计算要跑多少步！」黄蓉的声音从远处传来。",
+  "npc": "梅超风",
+  "template": "# 逃跑模拟\n# 初始距离100步，每轮你跑3步，敌人追2步，净减1步\n# 距离<=0时被追上\n\ndistance = 100\nrounds = 0\n\n# TODO: while循环\n\nprint(rounds)\n",
+  "tests": [{"input": "", "expected_output": "100", "display": "100轮后被追上"}],
+  "hint": "while distance > 0: distance -= 1; rounds += 1",
+  "knowledge": "while循环",
+  "difficulty": 1,
+  "rewards": {"exp": 70, "silver": 30}
+}

@@ -1,0 +1,13 @@
+{
+  "id": "advanced_017",
+  "title": "乾坤大挪移·七层",
+  "description": "乾坤大挪移可以在运行时动态添加属性。请实现 `__getattr__`：\n\n```python\nclass MingCultist:\n    def __init__(self, name):\n        self.name = name\n        self._skills = {}\n    \n    def __getattr__(self, attr):\n        if attr in self._skills:\n            return self._skills[attr]\n        return f'{attr}未学会'\n    \n    def learn(self, skill_name, skill_desc):\n        self._skills[skill_name] = skill_desc\n```\n\n创建 MingCultist('张无忌')，learn('乾坤大挪移', '运行时改变一切')，然后输出 zwj.乾坤大挪移。\n\n输出：`运行时改变一切`",
+  "story": "张无忌在光明顶密道中修炼乾坤大挪移——动态获取属性，运行时改变一切！",
+  "npc": "张无忌",
+  "template": "class MingCultist:\n    def __init__(self, name):\n        self.name = name\n        self._skills = {}\n    \n    def __getattr__(self, attr):\n        # TODO\n        pass\n    \n    def learn(self, skill_name, skill_desc):\n        # TODO\n        pass\n\nzwj = MingCultist('张无忌')\nzwj.learn('乾坤大挪移', '运行时改变一切')\nprint(zwj.乾坤大挪移)\n",
+  "tests": [{"input": "", "expected_output": "运行时改变一切", "display": "__getattr__动态属性"}],
+  "hint": "__getattr__中 if attr in self._skills: return self._skills[attr]; return f'{attr}未学会'",
+  "knowledge": "__getattr__动态属性",
+  "difficulty": 3,
+  "rewards": {"exp": 200, "silver": 80}
+}
