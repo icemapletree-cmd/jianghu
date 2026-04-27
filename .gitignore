@@ -1,32 +1,6 @@
-# Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-*.egg-info/
-dist/
-build/
-*.egg
-
-# 虚拟环境
-venv/
-.venv/
-env/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# 存档（玩家数据）
-save/*.json
-
-# OS
+*.pyc
+*.pyo
+save/
 .DS_Store
-Thumbs.db
-
-# 敏感文件
-.secrets/
-*.secret
+.env
