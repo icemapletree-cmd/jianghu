@@ -220,7 +220,7 @@ class Game:
         console.print(Panel(
             f"📍 {self.player.location}\n{loc.get('description', '')}",
             border_style="blue",
-            title=f"[{loc.get('region', '未知')}]"
+            title=f"\\[{loc.get('region', '未知')}]"
         ))
         console.print(f"  [dim]{self.player.name} | "
                      f"{self.player.get_level_name()} | "
@@ -447,7 +447,8 @@ class Game:
                 console.print()
                 print_reward(exp, silver)
                 if leveled:
-                    console.print(f"\n[bold yellow]🎉 升级！[{self.player.get_level_name()}]！[/bold yellow]")
+                    level_name = self.player.get_level_name()
+                    console.print(f"\n[bold yellow]🎉 升级！\\[{level_name}]！[/bold yellow]")
                 # 趣味评语
                 if random.random() < 0.3:
                     console.print("[dim cyan]「比黄蓉还机灵！」[/dim cyan]")
@@ -572,13 +573,13 @@ class Game:
             for q in active:
                 prog = self.quest_handler.get_quest_progress(q.id) if self.quest_handler else {}
                 stage_info = prog.get("progress", "?/?")
-                console.print(f"  📌 [{q.quest_type.value}] {q.title} — {q.description[:30]}... ({stage_info})")
+                console.print(f"  📌 \\[{q.quest_type.value}] {q.title} — {q.description[:30]}... ({stage_info})")
         # 可用任务
         available = self.story_mgr.get_available_quests()
         if available:
             console.print("\n[bold]📋 可接取：[/bold]")
             for q in available:
-                console.print(f"  ○ [{q.quest_type.value}] {q.title} — {q.description[:40]}...")
+                console.print(f"  ○ \\[{q.quest_type.value}] {q.title} — {q.description[:40]}...")
             console.print()
             opts = [f"接取: {q.title}" for q in available]
             opts.append("返回")
@@ -687,7 +688,7 @@ class Game:
             return
         console.print("\n可用存档：")
         for i, s in enumerate(saves, 1):
-            console.print(f"  [{i}] {s}")
+            console.print(f"  \\[{i}] {s}")
         choice = get_choice([s.replace('.json', '') for s in saves])
         save_path = os.path.join(save_dir, saves[choice - 1])
         try:

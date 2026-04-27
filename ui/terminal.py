@@ -187,7 +187,7 @@ def get_code_input() -> str:
 def get_choice(options: list) -> int:
     """显示选项并获取选择"""
     for i, opt in enumerate(options, 1):
-        console.print(f"  [bold cyan][{i}][/cyan] {opt}")
+        console.print(f"  [bold cyan]\\[{i}][/] {opt}")
     
     while True:
         choice = get_input("你的选择 > ")
