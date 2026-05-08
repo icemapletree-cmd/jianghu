@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (backup scripts)
+node_modules/
+_replace_*.js
+
+# Backup files
+*.bak
+*.bak[0-9]*
+
+# Logs
+*.log

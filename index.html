@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>代码入江湖：天龙八部 Python 闯关录</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <img class="brand-mark" src="assets/jianghu-map.svg" alt="江湖地图" />
+          <div>
+            <h1>代码入江湖</h1>
+            <p>天龙八部 Python 闯关录</p>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-button" id="logout-login" type="button">退出登录</button>
+          <button class="ghost-button" id="reset-save" type="button">重置存档</button>
+          <button class="primary-button" id="open-guide" type="button">查看心法</button>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <aside class="chapter-panel" aria-label="章节">
+          <div class="panel-heading">
+            <span>江湖路线</span>
+            <strong id="progress-label">0/0</strong>
+          </div>
+          <div id="chapter-list" class="chapter-list"></div>
+        </aside>
+
+        <section class="quest-stage" aria-label="任务">
+          <nav class="quest-tabs" id="quest-tabs" aria-label="本章任务"></nav>
+
+          <article class="quest-card">
+            <div class="quest-meta">
+              <span id="quest-chapter">第一篇</span>
+              <span id="quest-difficulty">入门</span>
+              <span id="quest-npc">段誉</span>
+            </div>
+            <a id="resource-link" class="resource-link" href="#" target="_blank" rel="noreferrer" hidden>详细学习</a>
+            <h2 id="quest-title">载入江湖事件...</h2>
+            <p id="quest-story" class="story-text"></p>
+
+            <div class="brief-grid">
+              <section>
+                <h3>你的任务</h3>
+                <p id="quest-objective"></p>
+              </section>
+              <section>
+                <h3>期望输出</h3>
+                <pre id="expected-output" class="expected-output"></pre>
+              </section>
+              <section>
+                <h3>修炼知识</h3>
+                <ul id="knowledge-list"></ul>
+              </section>
+            </div>
+          </article>
+
+          <section class="code-workbench" aria-label="代码试炼">
+            <div class="workbench-head">
+              <div>
+                <h2>代码试炼</h2>
+                <p>补全代码，系统会检查你是否真正用上本关心法。</p>
+              </div>
+              <div class="workbench-actions">
+                <button class="ghost-button" id="show-hint" type="button">提示</button>
+                <button class="primary-button" id="run-code" type="button">运行试炼</button>
+                <button class="ghost-button" id="next-quest" type="button">下一关</button>
+              </div>
+            </div>
+            <div class="trial-guide">
+              <div>
+                <strong>通关心法</strong>
+                <div id="keyword-list" class="keyword-list"></div>
+              </div>
+              <div>
+                <strong>挑战规则</strong>
+                <p>不能直接提交初始模板；Tab 可缩进，括号和引号会自动补全，注释可以保留，系统会自动跳过。</p>
+              </div>
+            </div>
+            <textarea id="code-editor" spellcheck="false" aria-label="Python 代码"></textarea>
+            <div class="output-panel" id="output-panel" role="status">等待少侠出招。</div>
+          </section>
+        </section>
+
+        <aside class="status-panel" aria-label="角色状态">
+          <section class="player-card">
+            <div class="player-avatar" id="player-avatar">云栖</div>
+            <div>
+              <h2 id="player-sect">逍遥旁支弟子</h2>
+              <p id="rank-label">初入江湖</p>
+            </div>
+          </section>
+
+          <section class="stats-grid">
+            <div><span>经验</span><strong id="stat-exp">0</strong></div>
+            <div><span>信任</span><strong id="stat-trust">0</strong></div>
+            <div><span>声望</span><strong id="stat-reputation">0</strong></div>
+            <div><span>金钱</span><strong id="stat-money">10 两</strong></div>
+          </section>
+
+          <section class="progress-card">
+            <div class="panel-heading">
+              <span>修行进度</span>
+              <strong id="completion-percent">0%</strong>
+            </div>
+            <div class="progress-track">
+              <div id="progress-fill"></div>
+            </div>
+          </section>
+
+          <section class="arts-card">
+            <h2>已悟武功</h2>
+            <div id="arts-list" class="tag-list"></div>
+          </section>
+
+          <section class="hint-card" id="hint-card">
+            <h2>王语嫣提示</h2>
+            <p id="hint-text">先看期望输出，再把任务拆成准备数据、处理逻辑、输出结果三步。</p>
+            <button class="answer-button" id="show-answer" type="button">参考答案</button>
+            <pre class="answer-panel" id="answer-panel" hidden></pre>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <dialog id="guide-dialog">
+      <div class="dialog-head">
+        <h2>蛇形 Python 心法</h2>
+        <button class="icon-button" id="close-guide" type="button" aria-label="关闭">×</button>
+      </div>
+      <div class="guide-content">
+        <p>每个江湖事件都对应一个 Python 知识点。写代码时不必追求一次完美，先让思路跑起来，再慢慢补全边界。</p>
+        <ul>
+          <li>绿色输出表示通过当前任务，会结算经验、信任、声望、金钱和武功。</li>
+          <li>黄色输出表示关键心法缺失，查看提示后再补代码。</li>
+          <li>参考答案会按难度扣除银两，只展示思路和代码，不会自动填写。</li>
+          <li>所有进度会自动保存到浏览器本地。</li>
+        </ul>
+      </div>
+    </dialog>
+
+    <div id="login-overlay" class="login-overlay" hidden>
+      <form class="login-card" id="login-form">
+        <h2>步入江湖</h2>
+        <p class="login-tip">可选择已有存档继续，也可新建一位少侠重新开始。</p>
+        <label id="save-select-row">
+          <span>已有存档</span>
+          <select id="login-save-list"></select>
+        </label>
+        <label>
+          <span>名号</span>
+          <div class="login-inline">
+            <input type="text" id="login-name" maxlength="8" placeholder="例：云栖" required />
+            <button type="button" class="ghost-button" id="random-name">随机</button>
+          </div>
+        </label>
+        <label>
+          <span>门派</span>
+          <select id="login-sect" required>
+            <option value="逍遥派弟子">逍遥派弟子</option>
+            <option value="丐帮弟子">丐帮弟子</option>
+            <option value="大理段氏子弟">大理段氏子弟</option>
+            <option value="少林俗家弟子">少林俗家弟子</option>
+            <option value="天山灵鹫宫弟子">天山灵鹫宫弟子</option>
+            <option value="姑苏慕容家臣">姑苏慕容家臣</option>
+            <option value="星宿派弟子">星宿派弟子</option>
+            <option value="西夏一品堂武士">西夏一品堂武士</option>
+          </select>
+        </label>
+        <div class="login-actions">
+          <button type="button" class="ghost-button" id="new-save">重新开始</button>
+          <button type="button" class="ghost-button" id="load-save">读取存档</button>
+          <button type="submit" class="primary-button">闯荡江湖</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="data/quests.js"></script>
+    <script src="app.js"></script>
+    <script>
+      (function () {
+        const STORAGE_KEY = "jianghu2.profiles";
+        const ACTIVE_KEY = "jianghu2.activeProfileId";
+        const ACTIVE_SAVE_KEY = "jianghu2.activeSaveKey";
+        const overlay = document.getElementById("login-overlay");
+        const form = document.getElementById("login-form");
+        const nameInput = document.getElementById("login-name");
+        const sectInput = document.getElementById("login-sect");
+        const saveList = document.getElementById("login-save-list");
+        const loadBtn = document.getElementById("load-save");
+        const newBtn = document.getElementById("new-save");
+        const randomBtn = document.getElementById("random-name");
+        const avatarEl = document.getElementById("player-avatar");
+        const sectEl = document.getElementById("player-sect");
+
+        const DEFAULTS = { name: "云栖", sect: "逍遥派弟子" };
+        const SURNAMES = ["段", "乔", "虚", "慕容", "王", "木", "钟", "阿", "游", "苏", "秦", "阮", "云", "萧", "叶", "柳"];
+        const GIVEN_NAMES = ["云栖", "惊鸿", "听雪", "归鹤", "问舟", "凌波", "青崖", "照夜", "无尘", "星河", "知微", "临风", "若水", "观澜"];
+
+        function applyIdentity(id) {
+          if (!id) return;
+          if (id.name) avatarEl.textContent = id.name;
+          if (id.sect) sectEl.textContent = id.sect;
+        }
+
+        function showLogin(prefill) {
+          nameInput.value = prefill?.name || "";
+          sectInput.value = prefill?.sect || DEFAULTS.sect;
+          renderSaveList();
+          overlay.hidden = false;
+          setTimeout(() => nameInput.focus(), 50);
+        }
+
+        function readProfiles() {
+          try {
+            const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+            return Array.isArray(parsed) ? parsed : [];
+          } catch (e) {
+            return [];
+          }
+        }
+
+        function writeProfiles(profiles) {
+          try { localStorage.setItem(STORAGE_KEY, JSON.stringify(profiles)); } catch (e) {}
+        }
+
+        function renderSaveList() {
+          const profiles = readProfiles();
+          saveList.innerHTML = "";
+          profiles.forEach(function (profile) {
+            const option = document.createElement("option");
+            option.value = profile.id;
+            option.textContent = profile.name + "｜" + profile.sect;
+            saveList.appendChild(option);
+          });
+          saveList.disabled = profiles.length === 0;
+          loadBtn.disabled = profiles.length === 0;
+        }
+
+        function createProfile() {
+          const id = Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+          return {
+            id,
+            name: nameInput.value.trim() || DEFAULTS.name,
+            sect: sectInput.value || DEFAULTS.sect,
+            saveKey: "jianghu-python-game-save-v4-" + id
+          };
+        }
+
+        function activateProfile(profile, reload) {
+          const profiles = readProfiles();
+          const index = profiles.findIndex(function (item) { return item.id === profile.id; });
+          if (index >= 0) {
+            profiles[index] = profile;
+          } else {
+            profiles.push(profile);
+          }
+          writeProfiles(profiles);
+          applyIdentity(profile);
+          try {
+            localStorage.setItem(ACTIVE_KEY, profile.id);
+            localStorage.setItem(ACTIVE_SAVE_KEY, profile.saveKey);
+          } catch (e) {}
+          overlay.hidden = true;
+          if (reload) location.reload();
+        }
+
+        function getActiveProfile() {
+          const activeId = localStorage.getItem(ACTIVE_KEY);
+          return readProfiles().find(function (profile) { return profile.id === activeId; });
+        }
+
+        function randomName() {
+          const surname = SURNAMES[Math.floor(Math.random() * SURNAMES.length)];
+          const given = GIVEN_NAMES[Math.floor(Math.random() * GIVEN_NAMES.length)];
+          nameInput.value = surname + given;
+        }
+
+        const activeProfile = getActiveProfile();
+        if (activeProfile) {
+          applyIdentity(activeProfile);
+        } else {
+          showLogin(DEFAULTS);
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          activateProfile(createProfile(), true);
+        });
+
+        randomBtn.addEventListener("click", randomName);
+
+        loadBtn.addEventListener("click", function () {
+          const profile = readProfiles().find(function (item) { return item.id === saveList.value; });
+          if (profile) activateProfile(profile, true);
+        });
+
+        newBtn.addEventListener("click", function () {
+          nameInput.value = "";
+          sectInput.value = DEFAULTS.sect;
+          randomName();
+        });
+
+        saveList.addEventListener("change", function () {
+          const profile = readProfiles().find(function (item) { return item.id === saveList.value; });
+          if (!profile) return;
+          nameInput.value = profile.name;
+          sectInput.value = profile.sect;
+        });
+
+        const logoutBtn = document.getElementById("logout-login");
+        if (logoutBtn) {
+          logoutBtn.addEventListener("click", function () {
+            try {
+              localStorage.removeItem(ACTIVE_KEY);
+              localStorage.removeItem(ACTIVE_SAVE_KEY);
+            } catch (e) {}
+            showLogin(DEFAULTS);
+          });
+        }
+
+        const resetBtn = document.getElementById("reset-save");
+        if (resetBtn) {
+          resetBtn.addEventListener("click", function () {
+            const active = getActiveProfile();
+            if (!active) return;
+            try { localStorage.removeItem(active.saveKey); } catch (e) {}
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
